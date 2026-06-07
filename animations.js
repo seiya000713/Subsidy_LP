@@ -5,16 +5,8 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // --- Mark elements for scroll reveal ---
-  var revealGroups = [
-    [".eyebrow"],
-    [".section-title"],
-    [".service-card", ".case-card", ".stat"],
-    [".partner-list li"],
-    [".cta-inner h2", ".cta-inner p", ".cta-inner .btn"],
-  ];
-
   document.querySelectorAll(
-    ".eyebrow, .section-title, .service-card, .case-card, .stat, " +
+    ".eyebrow, .section-title, .case-card, .stat, " +
     ".partner-list li, .cta-inner h2, .cta-inner p, .cta-inner .btn"
   ).forEach(function (el) {
     el.classList.add("reveal");
@@ -146,41 +138,6 @@
         if (btn) { btn.disabled = false; btn.innerHTML = '送信する　<span class="arrow">→</span>'; }
         setStatus("送信ありがとうございます。2営業日以内にご連絡いたします。", "ok");
       }, 700);
-    });
-  }
-
-  // --- 3D tilt on service cards (pointer-capable, non-reduced-motion only) ---
-  var canTilt = !reduce &&
-    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  if (canTilt) {
-    var MAX = 9; // deg
-    document.querySelectorAll(".service-card").forEach(function (card) {
-      card.classList.add("tilt");
-      var raf = null;
-
-      var onMove = function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;   // 0..1
-        var py = (e.clientY - r.top) / r.height;   // 0..1
-        var ry = (px - 0.5) * 2 * MAX;             // left/right
-        var rx = (0.5 - py) * 2 * MAX;             // up/down
-        if (raf) cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(function () {
-          card.style.transform =
-            "translateY(-6px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" +
-            ry.toFixed(2) + "deg)";
-        });
-      };
-
-      card.addEventListener("mouseenter", function () {
-        card.style.transition = "transform 0.08s linear";
-      });
-      card.addEventListener("mousemove", onMove);
-      card.addEventListener("mouseleave", function () {
-        if (raf) cancelAnimationFrame(raf);
-        card.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
-        card.style.transform = "";
-      });
     });
   }
 
