@@ -215,6 +215,15 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  perspective: 1000px;
+}
+.service-card.tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.service-card.tilt .icon,
+.service-card.tilt h3 {
+  transform: translateZ(28px);
 }
 .service-card {
   position: relative;
