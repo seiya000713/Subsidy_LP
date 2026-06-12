@@ -6,14 +6,19 @@
 
   // --- Mark elements for scroll reveal ---
   document.querySelectorAll(
-    ".eyebrow, .section-title, .case-card, .stat, " +
+    ".eyebrow, .section-title, .stat, " +
     ".partner-list li, .cta-inner h2, .cta-inner p, .cta-inner .btn"
   ).forEach(function (el) {
     el.classList.add("reveal");
   });
 
+  // 事例スライドは右からスライドイン
+  document.querySelectorAll(".case-slide").forEach(function (el) {
+    el.classList.add("reveal-x");
+  });
+
   // Stagger within each grid
-  [".service-grid", ".case-grid", ".stat-grid", ".partner-list"].forEach(function (sel) {
+  [".service-grid", ".stat-grid", ".partner-list"].forEach(function (sel) {
     var parent = document.querySelector(sel);
     if (!parent) return;
     Array.prototype.slice.call(parent.children).forEach(function (child, i) {
@@ -25,25 +30,33 @@
 
   // --- IntersectionObserver reveal ---
   if (reduce || !("IntersectionObserver" in window)) {
-    document.querySelectorAll(".reveal").forEach(function (el) {
+    document.querySelectorAll(".reveal, .reveal-x").forEach(function (el) {
       el.classList.add("is-visible");
     });
   } else {
+    // 事例スライドの階段式ディレイ: 直近の発火から間隔を空けて直列に
+    var stairEnd = 0;
+    var stairStep = 280; // ms
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-            if (entry.target.classList.contains("stat")) {
-              countUp(entry.target.querySelector(".stat-num"));
-            }
+          if (!entry.isIntersecting) return;
+          if (entry.target.classList.contains("reveal-x")) {
+            var now = performance.now();
+            var start = Math.max(now, stairEnd);
+            entry.target.style.transitionDelay = ((start - now) / 1000) + "s";
+            stairEnd = start + stairStep;
+          }
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+          if (entry.target.classList.contains("stat")) {
+            countUp(entry.target.querySelector(".stat-num"));
           }
         });
       },
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
     );
-    document.querySelectorAll(".reveal").forEach(function (el) {
+    document.querySelectorAll(".reveal, .reveal-x").forEach(function (el) {
       io.observe(el);
     });
   }
