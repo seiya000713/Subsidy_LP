@@ -218,28 +218,56 @@ a { color: inherit; text-decoration: none; }
 }
 .service-card {
   position: relative;
+  overflow: hidden;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 40px 26px 30px;
-  text-align: center;
+  padding: 36px 26px 26px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: background 0.35s ease, border-color 0.35s ease,
+    box-shadow 0.3s ease, transform 0.3s ease;
 }
-/* Hover: simple lift */
+.service-card > * { position: relative; z-index: 1; }
+/* 背景にうっすら浮かぶ番号 */
+.service-card .num {
+  position: absolute;
+  z-index: 0;
+  top: -30px;
+  right: 6px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 150px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: rgba(14, 31, 68, 0.055);
+  pointer-events: none;
+  user-select: none;
+  transition: color 0.35s ease;
+}
+.service-card .svc-label {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+  margin-bottom: 16px;
+  transition: color 0.35s ease;
+}
+/* Hover: ネイビーに反転 */
 .service-card:hover {
-  box-shadow: 0 20px 44px rgba(14, 31, 68, 0.14);
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+  box-shadow: 0 24px 48px rgba(10, 23, 51, 0.28);
   transform: translateY(-8px);
 }
-.service-card .icon {
-  width: 76px; height: 76px;
-  margin: 4px auto 24px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(14, 31, 68, 0.18);
-}
-.service-card .icon img { width: 100%; height: 100%; object-fit: cover; }
+.service-card:hover .num { color: rgba(216, 189, 132, 0.13); }
+.service-card:hover .svc-label { color: var(--gold-light); }
+.service-card:hover h3 { color: var(--white); }
+.service-card:hover p { color: #c9d2e2; }
+.service-card:hover li { color: #dfe5f0; border-top-color: rgba(255, 255, 255, 0.14); }
+.service-card:hover li::before { background: var(--gold-light); }
 .service-card h3 {
   font-family: var(--serif);
   font-weight: 600;
@@ -247,13 +275,36 @@ a { color: inherit; text-decoration: none; }
   color: var(--navy-deep);
   margin-bottom: 14px;
   letter-spacing: 0.02em;
+  transition: color 0.35s ease;
 }
 .service-card p {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--ink-soft);
   text-align: left;
   flex: 1;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+  transition: color 0.35s ease;
+}
+.service-card ul { list-style: none; margin-top: auto; }
+.service-card li {
+  position: relative;
+  font-size: 13px;
+  color: var(--ink);
+  padding: 10px 0 10px 16px;
+  border-top: 1px solid var(--line);
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+.service-card li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  transition: background 0.35s ease;
 }
 .link-more {
   font-size: 13px;
