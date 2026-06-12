@@ -606,12 +606,35 @@ a { color: inherit; text-decoration: none; }
   padding: 96px 0 88px;
   text-align: center;
 }
+.contact-head.contact-head-lg { padding: 120px 0 110px; }
+.contact-head-lead {
+  position: relative;
+  z-index: 3;
+  margin: 22px auto 0;
+  max-width: 640px;
+  color: #d2dae8;
+  font-size: 16px;
+  line-height: 1.95;
+}
 .contact-head-bg {
   position: absolute;
   inset: 0;
   z-index: 1;
   background-size: cover;
   background-position: center;
+}
+/* 背景をゆっくりパン＆ズーム（Ken Burns）— 映像が進む演出 */
+.contact-head-lg .contact-head-bg {
+  transform-origin: center;
+  will-change: transform;
+  animation: skylinePan 12s ease-in-out infinite alternate;
+}
+@keyframes skylinePan {
+  0%   { transform: scale(1.14) translate3d(-4.5%, 1.2%, 0); }
+  100% { transform: scale(1.26) translate3d(4.5%, -3%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-head-lg .contact-head-bg { animation: none; transform: scale(1.04); }
 }
 .contact-head-overlay {
   position: absolute;

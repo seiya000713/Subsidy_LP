@@ -131,13 +131,32 @@
       if (btn) { btn.disabled = true; btn.textContent = "送信中…"; }
       setStatus("", "");
 
-      // NOTE: No backend wired yet. Replace this block with a real
-      // fetch() POST to your form endpoint (e.g. Formspree / API).
-      setTimeout(function () {
-        form.reset();
+      var resetBtn = function () {
         if (btn) { btn.disabled = false; btn.innerHTML = '送信する　<span class="arrow">→</span>'; }
-        setStatus("送信ありがとうございます。2営業日以内にご連絡いたします。", "ok");
-      }, 700);
+      };
+
+      // Web3Forms へ POST（受信先メールはaccess keyに紐づく＝nagoya@belltecjapan.com）
+      var data = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: data
+      })
+        .then(function (res) { return res.json().catch(function () { return {}; }).then(function (j) { return { ok: res.ok, j: j }; }); })
+        .then(function (r) {
+          if (r.ok && r.j && r.j.success) {
+            form.reset();
+            resetBtn();
+            setStatus("送信ありがとうございます。2営業日以内にご連絡いたします。", "ok");
+          } else {
+            resetBtn();
+            setStatus("送信に失敗しました。時間をおいて再度お試しください。", "err");
+          }
+        })
+        .catch(function () {
+          resetBtn();
+          setStatus("通信エラーが発生しました。ネット接続をご確認ください。", "err");
+        });
     });
   }
 
