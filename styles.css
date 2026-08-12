@@ -318,33 +318,30 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Results ===== */
 .results {
-  background:
-    linear-gradient(180deg, rgba(10,23,51,0.96), rgba(10,23,51,0.96)),
-    radial-gradient(circle at 20% 0%, rgba(198,162,90,0.12), transparent 40%);
-  background-color: var(--navy-deep);
+  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 55%, #dce9f5 100%);
 }
+.results .eyebrow-light { color: var(--gold); }
+.results .section-title.light { color: var(--navy-deep); }
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 22px;
 }
 .stat {
   text-align: center;
-  padding: 12px 18px;
+  padding: 34px 20px 28px;
   position: relative;
-}
-.stat:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: 0; top: 18%;
-  height: 64%;
-  width: 1px;
-  background: rgba(198, 162, 90, 0.25);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(14, 31, 68, 0.08);
 }
 .stat-icon { width: 52px; height: 52px; margin: 0 auto 16px; }
-.stat-icon img { width: 100%; height: 100%; object-fit: contain; }
+.stat-icon img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.72) saturate(1.4); }
 .stat-label {
-  color: #cbd3e4;
+  color: var(--ink);
   font-size: 15px;
   letter-spacing: 0.05em;
   margin-bottom: 8px;
@@ -352,14 +349,14 @@ a { color: inherit; text-decoration: none; }
 .stat-num {
   font-family: var(--serif);
   font-weight: 600;
-  color: var(--gold-light);
+  color: var(--navy-deep);
   font-size: 46px;
   line-height: 1;
   margin-bottom: 14px;
 }
 .stat-num .unit { font-size: 18px; margin-left: 2px; }
 .stat-note {
-  color: #9aa6c2;
+  color: var(--ink-soft);
   font-size: 12px;
   line-height: 1.7;
 }
