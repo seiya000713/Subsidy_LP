@@ -211,7 +211,10 @@ a { color: inherit; text-decoration: none; }
 .section-title.light { color: var(--white); }
 
 /* ===== Services ===== */
-.services { background: var(--bg-soft); }
+.services {
+  background: var(--white);
+  border-top: 1px solid rgba(198, 162, 90, 0.4);
+}
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -318,7 +321,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Results ===== */
 .results {
-  background: linear-gradient(180deg, #ffffff 0%, #eef4fa 55%, #dce9f5 100%);
+  background: var(--white);
+  border-top: 1px solid rgba(198, 162, 90, 0.4);
 }
 .results .eyebrow-light { color: var(--gold); }
 .results .section-title.light { color: var(--navy-deep); }
@@ -331,12 +335,10 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   padding: 34px 20px 28px;
   position: relative;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: var(--white);
+  border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(14, 31, 68, 0.08);
+  box-shadow: 0 10px 28px rgba(14, 31, 68, 0.07);
 }
 .stat-icon { width: 52px; height: 52px; margin: 0 auto 16px; }
 .stat-icon img { width: 100%; height: 100%; object-fit: contain; filter: brightness(0.72) saturate(1.4); }
@@ -990,4 +992,41 @@ a { color: inherit; text-decoration: none; }
   filter: none;
   transform: none;
   color: var(--gold-light);
+}
+
+/* ===== Mission ===== */
+.hero-copy h1.hero-mission {
+  font-size: clamp(30px, 4.4vw, 58px);
+  line-height: 1.42;
+}
+.hero-mission-en {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: clamp(12px, 1.1vw, 15px);
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+.mission { background: var(--white); }
+.mission .section-title { margin-bottom: 40px; }
+.mission-body {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.mission-body p {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 2.1;
+  margin-bottom: 18px;
+}
+.sp-only { display: none; }
+@media (max-width: 560px) {
+  .sp-only { display: inline; }
+  .mission-body { text-align: left; }
+}
+
+@media (max-width: 560px) {
+  .hero-copy h1.hero-mission { white-space: nowrap; font-size: clamp(20px, 6.2vw, 25px); line-height: 1.55; }
+  .hero-mission-en { font-size: 10px; letter-spacing: 0.14em; }
 }
