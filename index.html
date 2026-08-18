@@ -245,16 +245,19 @@
 
   <!-- Contact (CTA統合) -->
   <section class="contact" id="contact">
-    <div class="contact-head contact-head-lg">
-      <div class="contact-head-bg" style="background-image:url('assets/cta_day.png')"></div>
-      <div class="contact-head-overlay"></div>
-      <div class="container">
-        <p class="eyebrow eyebrow-light">CONTACT US</p>
-        <h2 class="contact-head-title">お問い合わせ</h2>
-        <p class="contact-head-lead">経営の課題、補助金の活用について、まずはお気軽にご相談ください。<br />経験豊富なコンサルタントが、2営業日以内にご連絡いたします。</p>
+    <div class="container contact-cols">
+      <div class="contact-info">
+        <p class="eyebrow contact-eyebrow">CONTACT US</p>
+        <h2 class="contact-title">お問い合わせ</h2>
+        <div class="contact-rule"></div>
+        <p class="contact-lead">経営の課題、補助金の活用について、<br />まずはお気軽にお問い合わせください。<br />担当者より、2営業日以内にご連絡いたします。</p>
+        <div class="office-list">
+          <div class="office">名古屋営業所</div>
+          <div class="office">高崎営業所</div>
+        </div>
+        <p class="contact-mail-note">お問い合わせは右のフォームより承ります。<br />内容を確認のうえ、担当者よりご連絡いたします。</p>
       </div>
-    </div>
-    <div class="contact-body">
+      <div class="contact-body">
 
       <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
         <!-- Web3Forms 設定: 下のvalueを nagoya@belltecjapan.com で取得したaccess keyに差し替え -->
@@ -313,6 +316,7 @@
 
         <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
+      </div>
     </div>
   </section>
 
