@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>いま使える補助金をやさしく解説｜株式会社ベルテックジャパン</title>
+  <meta name="description" content="補助金ってなに？いくら戻る？うちは対象？を専門用語なしでやさしく解説。いま募集中の省力化投資補助金（一般型）の締切・補助額・対象条件をわかりやすくまとめました。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon_48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon_192.png" />
+  <link rel="apple-touch-icon" href="/assets/favicon_180.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* このページ専用の軽い装飾（tokens準拠） */
+    .hj-badge {
+      display: inline-block; background: var(--gold); color: #fff;
+      font-size: 13px; font-weight: 700; letter-spacing: .08em;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 14px;
+    }
+    .hj-lead { font-size: 16px; line-height: 2.1; color: var(--ink-soft); }
+    .hj-point {
+      background: #fff; border: 1px solid var(--rule); border-radius: 12px;
+      padding: 26px 28px; margin: 14px 0;
+    }
+    .hj-point .q { font-family: var(--serif); font-weight: 700; font-size: 18px; color: var(--navy); margin-bottom: 8px; }
+    .hj-point .a { font-size: 15px; line-height: 1.95; color: var(--ink-soft); }
+    .hj-point .a b { color: var(--navy); }
+    .hj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 14px; }
+    .hj-table th, .hj-table td { border: 1px solid var(--rule); padding: 10px 12px; text-align: center; }
+    .hj-table th { background: var(--navy); color: #fff; font-weight: 500; }
+    .hj-table td:first-child { background: #f6f8fb; }
+    .hj-steps { counter-reset: step; margin: 18px 0; padding: 0; list-style: none; }
+    .hj-steps li {
+      counter-increment: step; position: relative;
+      padding: 16px 18px 16px 64px; background: #fff;
+      border: 1px solid var(--rule); border-radius: 10px; margin-bottom: 10px;
+      font-size: 15px; line-height: 1.8; color: var(--ink-soft);
+    }
+    .hj-steps li::before {
+      content: counter(step); position: absolute; left: 18px; top: 50%;
+      transform: translateY(-50%);
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--navy); color: var(--gold);
+      font-family: var(--en); font-size: 17px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hj-steps li b { color: var(--navy); }
+    .hj-deadline {
+      background: linear-gradient(135deg, var(--navy) 0%, #16294f 100%);
+      color: #fff; border-radius: 14px; padding: 30px 30px 24px; margin: 20px 0;
+    }
+    .hj-deadline .t { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+    .hj-deadline .t .now {
+      display: inline-block; background: var(--gold); color: var(--navy);
+      font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+      vertical-align: 3px; margin-left: 10px;
+    }
+    .hj-deadline .row { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14.5px; line-height: 1.9; }
+    .hj-deadline .row span b { color: var(--gold); }
+    .hj-deadline .note { font-size: 12px; opacity: .75; margin-top: 12px; }
+    .hj-cta {
+      text-align: center; background: #f6f8fb; border: 1px solid var(--rule);
+      border-radius: 14px; padding: 36px 24px; margin-top: 44px;
+    }
+    .hj-cta .m { font-family: var(--serif); font-size: 20px; color: var(--navy); font-weight: 700; margin-bottom: 8px; }
+    .hj-cta .s { font-size: 14px; color: var(--ink-soft); margin-bottom: 20px; }
+    @media (max-width: 640px) {
+      .hj-table { font-size: 12.5px; }
+      .hj-table th, .hj-table td { padding: 8px 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo_white.png" alt="株式会社ベルテックジャパン" />
+        <span class="brand-name">株式会社ベルテックジャパン</span>
+      </a>
+      <nav class="gnav">
+        <a href="index.html#services">サービス</a>
+        <a href="results.html">実績</a>
+        <a href="cases.html">採択事例</a>
+        <a href="index.html#company">会社概要</a>
+      </nav>
+      <a href="index.html#contact" class="btn btn-gold header-cta">お問い合わせ</a>
+    </div>
+  </header>
+
+  <section class="contact-head">
+    <div class="contact-head-bg" style="background-image:url('assets/contact_bg.png')"></div>
+    <div class="contact-head-overlay"></div>
+    <div class="container">
+      <p class="eyebrow eyebrow-light">SUBSIDY GUIDE</p>
+      <h2 class="contact-head-title">いま使える補助金</h2>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container seo-body">
+
+      <p class="hj-lead">
+        「補助金って、なんだか難しそう」——そう感じている経営者の方へ。<br />
+        このページでは、専門用語を使わずに<b>「補助金のきほん」と「いま募集中の補助金」</b>をまとめました。読むのにかかる時間は約3分です。
+      </p>
+
+      <h3 class="seo-h3">補助金のきほん　3つだけ</h3>
+
+      <div class="hj-point">
+        <p class="q">Q1. 補助金ってなに？</p>
+        <p class="a">国や自治体が、がんばる会社の設備投資などを応援するために出すお金です。<b>融資と違って、返す必要はありません。</b>ただし「先に自社で支払い、後からお金が戻ってくる」仕組みです。</p>
+      </div>
+      <div class="hj-point">
+        <p class="q">Q2. いくら戻ってくるの？</p>
+        <p class="a">かかった費用の<b>2分の1〜3分の2</b>が目安です。たとえば2,000万円の機械を導入した場合、<b>約1,000万円が戻ってくる</b>計算になります（補助率1/2の場合）。</p>
+      </div>
+      <div class="hj-point">
+        <p class="q">Q3. 誰でももらえるの？</p>
+        <p class="a">申請すれば必ずもらえるわけではなく、<b>事業計画書による審査</b>があります。だからこそ、計画書の質で結果が大きく変わります。当社支援案件の採択率は96%です（省力化投資補助金 一般型・第1〜4回公募実績）。</p>
+      </div>
+
+      <h3 class="seo-h3">いま募集中の補助金</h3>
+
+      <div class="hj-deadline">
+        <p class="t">中小企業省力化投資補助金（一般型）第8回<span class="now">公募受付中</span></p>
+        <div class="row">
+          <span>申請受付開始：<b>2026年9月中旬（予定）</b></span>
+          <span>申請締切：<b>2026年10月中旬（予定）</b></span>
+        </div>
+        <p class="note">※日程は変更される場合があります。最新情報は<a href="https://shoryokuka.smrj.go.jp/ippan/" target="_blank" rel="noopener" style="color:#d8bd84;text-decoration:underline;">公式サイト</a>をご確認ください。申請には「GビズIDプライム」の事前取得が必要です（取得に1〜2週間）。</p>
+      </div>
+
+      <p class="hj-lead" style="margin-bottom:10px;">
+        <b>「人手不足を、機械やシステムで補う投資」を応援する補助金</b>です。ロボット・自動化設備・省力化システムの導入などが対象になります。もらえる上限額は会社の従業員数で決まります。
+      </p>
+
+      <table class="hj-table">
+        <tr><th>従業員数</th><th>補助上限額</th><th>大幅な賃上げをする場合</th></tr>
+        <tr><td>5人以下</td><td>750万円</td><td>1,000万円</td></tr>
+        <tr><td>6〜20人</td><td>1,500万円</td><td>2,000万円</td></tr>
+        <tr><td>21〜50人</td><td>3,000万円</td><td>4,000万円</td></tr>
+        <tr><td>51〜100人</td><td>5,000万円</td><td>6,500万円</td></tr>
+        <tr><td>101人以上</td><td>8,000万円</td><td>1億円</td></tr>
+      </table>
+      <p class="seo-note">※補助率：中小企業1/2（小規模企業者・再生事業者は2/3）。出典：中小企業省力化投資補助金（一般型）公式サイト（2026年8月時点）。</p>
+
+      <h3 class="seo-h3">こんな会社は対象になる可能性があります</h3>
+      <div class="hj-point">
+        <p class="a" style="line-height:2.3;">
+          ☑ 人手が足りず、受けられる仕事を断ったことがある<br />
+          ☑ 機械・設備の入替や増設を検討している<br />
+          ☑ 手作業の工程を自動化・効率化したい<br />
+          <br />
+          1つでも当てはまれば、まずは無料診断をおすすめします。<b>「うちの投資が対象になるか」を確認するだけなら、費用は一切かかりません。</b>
+        </p>
+      </div>
+
+      <h3 class="seo-h3">お金が戻ってくるまでの流れ</h3>
+      <ol class="hj-steps">
+        <li><b>無料診断・ご相談</b>　導入したい設備・現場の課題を伺い、使える補助金と見込み額をお伝えします</li>
+        <li><b>事業計画書の作成・申請</b>　採択のカギになる計画書を、当社が伴走して作り上げます</li>
+        <li><b>採択・設備の導入</b>　採択決定後に発注・導入。導入後の報告手続きもサポートします</li>
+        <li><b>補助金の入金</b>　報告が受理されると、補助金が振り込まれます</li>
+      </ol>
+      <p class="seo-note">※申請から入金まではおおむね1年前後かかります。設備の発注は原則「採択決定後」です（先に契約すると対象外になる場合があります）。</p>
+
+      <h3 class="seo-h3">よくあるご質問</h3>
+      <div class="hj-point">
+        <p class="q">Q. 相談にお金はかかりますか？</p>
+        <p class="a">ご相談・お見積りは<b>無料</b>です。報酬をいただくのは、支援内容にご納得いただきご契約いただいた場合のみです。</p>
+      </div>
+      <div class="hj-point">
+        <p class="q">Q. 何を導入するかまだ決まっていなくても相談できますか？</p>
+        <p class="a">できます。「人手不足をなんとかしたい」という段階からで大丈夫です。現場の課題から、補助金の対象になる投資をご一緒に考えます。</p>
+      </div>
+      <div class="hj-point">
+        <p class="q">Q. 落ちたらどうなりますか？</p>
+        <p class="a">審査に通らなかった場合、費用が無駄になることはありません。計画を磨き直して<b>次回の公募に再チャレンジ</b>できます（公募は年に複数回あります）。</p>
+      </div>
+
+      <div class="hj-cta">
+        <p class="m">まずは「対象になるか」だけ、確認してみませんか？</p>
+        <p class="s">LINEから「無料補助金診断」とお送りいただくか、お問い合わせフォームからご連絡ください。</p>
+        <a href="index.html#contact" class="btn btn-gold">無料診断・お問い合わせ</a>
+      </div>
+
+      <p class="seo-note" style="margin-top:28px;">※補助金の採択を保証するものではありません。制度の内容は年度・公募回により変更されます。記載の情報は2026年8月時点のものです。</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="footer-brand-link" href="index.html">
+        <img src="assets/logo_white.png" alt="株式会社ベルテックジャパン" />
+        <span class="footer-brand-name"><span class="nb">株式会社</span><span class="nb">ベルテックジャパン</span></span>
+      </a>
+      <nav class="footer-nav">
+        <a href="index.html#services">サービス</a>
+        <a href="results.html">実績</a>
+        <a href="cases.html">採択事例</a>
+        <a href="index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <nav class="footer-legal">
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="tokushoho.html">特定商取引法に基づく表記</a>
+        </nav>
+        <p class="copyright">© 株式会社ベルテックジャパン All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
