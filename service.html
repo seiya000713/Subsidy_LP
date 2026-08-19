@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>採択事例｜ウチみたいな会社でも通るの？｜株式会社ベルテックジャパン</title>
-<meta name="description" content="「ウチみたいな会社でも通るの？」——通ってます。製薬業2,091万円・運送業1,180万円・製造業695万円／467万円・省エネ182万円など、ベルテックジャパンが申請支援し採択された補助金事例5件をご紹介します。" />
-<link rel="canonical" href="https://www.belltecjapan.com/cases.html" />
+<title>サービス・料金｜契約時10万円＋成功報酬10%｜株式会社ベルテックジャパン</title>
+<meta name="description" content="ベルテックジャパンの補助金申請サポートの料金は2つだけ。契約時実務費用10万円と、交付決定額の10%の成功報酬。不採択でも再挑戦の追加費用はいただきません。ご相談・お見積りは無料です。" />
+<link rel="canonical" href="https://www.belltecjapan.com/service.html" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="採択事例｜ウチみたいな会社でも通るの？" />
-<meta property="og:description" content="製薬業2,091万円・運送業1,180万円ほか、ベルテックジャパンの補助金採択事例5件を金額とあわせてご紹介。" />
-<meta property="og:url" content="https://www.belltecjapan.com/cases.html" />
+<meta property="og:title" content="サービス・料金｜契約時10万円＋成功報酬10%" />
+<meta property="og:description" content="料金は2つだけ。契約時実務費用10万円＋交付決定額の10%。採択されなければ成功報酬は発生しません。" />
+<meta property="og:url" content="https://www.belltecjapan.com/service.html" />
 <meta property="og:site_name" content="株式会社ベルテックジャパン" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png" />
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon_48.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon_192.png" />
 <link rel="apple-touch-icon" href="/assets/favicon_180.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,7 +177,6 @@
     line-height:1.85;
     position:relative;
   }
-  /* 社長 = 左・白＋オレンジ縁 */
   .msg.boss{flex-direction:row;}
   .msg.boss .bubble{
     background:var(--white);
@@ -187,7 +184,6 @@
     border-radius:22px 22px 22px 6px;
     box-shadow:0 4px 0 rgba(245,159,74,.22);
   }
-  /* 診断士 = 右・ソフトブルー塗り */
   .msg.expert{flex-direction:row-reverse;}
   .msg.expert .body{text-align:left;}
   .msg.expert .name{text-align:right;}
@@ -199,6 +195,14 @@
   }
   .msg.expert .bubble strong{color:var(--yellow);}
   .msg.boss .bubble strong{color:var(--orange-deep);}
+  .bubble small{
+    display:block;
+    margin-top:6px;
+    font-size:11.5px;
+    opacity:.85;
+    line-height:1.6;
+    font-weight:500;
+  }
 
   /* ===== Cards ===== */
   .card{
@@ -241,102 +245,158 @@
     font-weight:500;
   }
 
-  /* ===== 事例カード ===== */
-  .case-card{
+  /* ===== 料金カード2枚 ===== */
+  .price-grid{
     display:flex;
-    align-items:center;
-    gap:18px;
-    margin-bottom:20px;
+    gap:16px;
+    align-items:stretch;
   }
-  .case-icon{
-    flex:none;
-    width:84px;height:84px;
-    border-radius:24px;
-    background:var(--pastel-yellow);
+  .price-card{
+    flex:1;
+    border-radius:22px;
+    padding:22px 18px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+  }
+  .price-card.first{
+    background:var(--pastel-orange);
+    border:2px solid var(--orange);
+  }
+  .price-card.second{
+    background:var(--pastel-blue);
+    border:2px solid var(--blue);
+  }
+  .price-card .step{
+    display:inline-block;
+    margin:0 auto 10px;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    font-weight:800;
+    border-radius:100px;
+    padding:3px 14px;
+    color:#fff;
+  }
+  .price-card.first .step{background:var(--orange);}
+  .price-card.second .step{background:var(--blue);}
+  .price-card h4{
+    font-size:15.5px;
+    line-height:1.5;
+    margin-bottom:6px;
+  }
+  .price-card.first h4{color:var(--orange-deep);}
+  .price-card.second h4{color:var(--blue-deep);}
+  .price-card .amount{
+    font-size:clamp(26px,6vw,34px);
+    font-weight:800;
+    line-height:1.3;
+    color:var(--ink);
+  }
+  .price-card .amount .unit{font-size:.5em;font-weight:800;}
+  .price-card .amount-cap{
+    font-size:11.5px;
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .price-card.first .amount-cap{color:var(--orange-deep);}
+  .price-card.second .amount-cap{color:var(--blue-deep);}
+  .price-card .desc{
+    font-size:12.5px;
+    color:var(--ink);
+    line-height:1.75;
+    font-weight:700;
+    margin-top:auto;
+  }
+  @media(max-width:560px){
+    .price-grid{flex-direction:column;}
+  }
+  .price-band{
+    margin-top:18px;
+    background:var(--pastel-green);
+    border:2px dashed var(--green);
+    border-radius:18px;
+    padding:14px 16px;
+    font-size:13.5px;
+    line-height:1.75;
+    font-weight:700;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .price-band svg{flex:none;margin-top:3px;}
+  .price-band b{color:var(--green);}
+
+  /* ===== 例：手取りイメージ図解 ===== */
+  .ex-bar .track{
+    display:flex;
+    height:40px;
+    border-radius:100px;
+    overflow:hidden;
     border:2px solid var(--line);
+    background:var(--white);
+  }
+  .ex-bar .seg{
     display:flex;
     align-items:center;
     justify-content:center;
-  }
-  .case-body{flex:1;min-width:0;}
-  .case-kind{
-    display:inline-block;
-    font-size:11px;
-    letter-spacing:.06em;
-    color:var(--blue-deep);
+    font-size:11.5px;
     font-weight:800;
-    background:var(--pastel-blue);
-    border-radius:100px;
-    padding:3px 12px;
-    margin-bottom:4px;
-  }
-  .case-title{
-    font-size:16.5px;
-    font-weight:800;
-    color:var(--ink);
-    line-height:1.5;
-  }
-  .case-amt{
-    margin-top:2px;
-    line-height:1.2;
+    letter-spacing:.02em;
     white-space:nowrap;
+    overflow:hidden;
   }
-  .case-amt .cap{
-    font-size:11px;
-    letter-spacing:.08em;
-    color:var(--muted);
-    font-weight:700;
-    margin-right:6px;
-  }
-  .case-amt .num{
-    font-size:clamp(30px,7.4vw,42px);
-    font-weight:800;
-    color:var(--orange-deep);
-    letter-spacing:.01em;
-  }
-  .case-amt .unit{
-    font-size:15px;
-    font-weight:800;
-    color:var(--ink);
-    margin-left:2px;
-  }
-  @media(max-width:480px){
-    .case-card{gap:13px;}
-    .case-icon{width:64px;height:64px;border-radius:18px;}
-    .case-title{font-size:15px;}
-  }
-
-  /* ===== 補助金チップ ===== */
-  .chip-row{
+  .ex-bar .seg.keep{flex:89;background:var(--green);color:#fff;}
+  .ex-bar .seg.fee{flex:10;background:var(--orange);color:#fff;font-size:10px;}
+  .ex-bar .seg.init{flex:1;min-width:8px;background:var(--yellow);}
+  .ex-bar .cap{font-size:11.5px;color:var(--muted);margin-top:8px;text-align:center;font-weight:700;}
+  .ex-rows{
     display:flex;
-    flex-wrap:wrap;
+    flex-direction:column;
     gap:10px;
-    margin-bottom:16px;
+    margin-bottom:20px;
   }
-  .chip{
-    display:inline-block;
+  .ex-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    border-radius:16px;
+    padding:11px 16px;
     font-size:13.5px;
     font-weight:800;
-    letter-spacing:.03em;
-    border-radius:100px;
-    padding:8px 18px;
-    line-height:1.4;
   }
-  .chip.c1{background:var(--pastel-orange);color:var(--orange-deep);border:2px solid var(--orange);}
-  .chip.c2{background:var(--pastel-blue);color:var(--blue-deep);border:2px solid var(--blue);}
-  .chip.c3{background:var(--pastel-yellow);color:var(--ink);border:2px solid var(--yellow);}
-  .chip.c4{background:var(--pastel-green);color:var(--green);border:2px solid var(--green);}
-  .chip.c5{background:var(--white);color:var(--muted);border:2px dashed var(--muted);}
-  .chip-note{
+  .ex-row .l{display:flex;align-items:center;gap:8px;line-height:1.5;}
+  .ex-row .l small{font-size:10.5px;font-weight:700;opacity:.8;}
+  .ex-row .v{white-space:nowrap;font-size:15px;}
+  .ex-row.in{background:var(--pastel-blue);border:2px solid var(--blue);color:var(--blue-deep);}
+  .ex-row.out{background:var(--pastel-orange);border:2px dashed var(--orange);color:var(--orange-deep);}
+  .ex-row.sum{background:var(--pastel-green);border:2px solid var(--green);color:var(--ink);}
+  .ex-row.sum .v{color:var(--green);font-size:17px;}
+  .ex-op{
+    text-align:center;
+    font-weight:800;
+    color:var(--muted);
     font-size:13px;
-    color:var(--ink);
-    line-height:1.8;
-    font-weight:700;
-    background:var(--pastel-yellow);
-    border:2px dashed var(--yellow);
-    border-radius:18px;
-    padding:12px 16px;
+    line-height:1;
+    margin:-2px 0;
   }
+
+  /* ===== チェックリスト ===== */
+  .check-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  .check-list li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    background:var(--pastel-yellow);
+    border:2px solid var(--line);
+    border-radius:16px;
+    padding:12px 15px;
+    font-size:13.5px;
+    line-height:1.7;
+    font-weight:700;
+  }
+  .check-list li svg{flex:none;margin-top:4px;}
+  .check-list li b{color:var(--orange-deep);}
 
   /* ===== CTA ===== */
   .cta-card{
@@ -391,16 +451,22 @@
     letter-spacing:.03em;
     font-weight:700;
   }
-  .cta-textlink{
-    margin-top:14px;
+  .cta-links{
+    margin-top:18px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px 22px;
+  }
+  .cta-links a{
     font-size:13px;
-  }
-  .cta-textlink a{
-    color:var(--blue-deep);
     font-weight:800;
-    text-decoration:underline;
-    text-underline-offset:3px;
+    color:var(--blue-deep);
+    text-decoration:none;
+    border-bottom:2px solid var(--blue);
+    padding-bottom:1px;
   }
+  .cta-links a:hover{color:var(--ink);border-bottom-color:var(--orange);}
 
   /* ===== Disclaimer / footer ===== */
   .disclaimer{
@@ -446,6 +512,11 @@
     .msg .avatar{width:44px;height:44px;}
     .bubble{font-size:14.5px;padding:12px 14px;}
     .card{padding:22px 16px;}
+    .ex-row{padding:10px 12px;font-size:12.5px;}
+    .ex-row .v{font-size:13.5px;}
+    .ex-row.sum .v{font-size:15px;}
+    .ex-bar .seg.keep{font-size:10px;}
+    .ex-bar .seg.fee{font-size:0;}
   }
 </style>
 </head>
@@ -542,56 +613,13 @@
       <circle cx="14" cy="14" r="12" fill="#5cb85c" stroke="#3a3630" stroke-width="2.2"/>
       <path d="M8.5 14.5 l4 4 7 -8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
-    <!-- 装飾：トロフィー -->
-    <g id="ico-trophy">
-      <path d="M9 4 h14 v7 a7 7 0 0 1 -14 0 Z" fill="#ffd23f" stroke="#3a3630" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M9 6 H4 v3 a5 5 0 0 0 5 4 M23 6 h5 v3 a5 5 0 0 1 -5 4" fill="none" stroke="#3a3630" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M14 18 h4 v4 h-4 Z" fill="#f59f4a" stroke="#3a3630" stroke-width="2"/>
-      <path d="M10 24 h12 v3 h-12 Z" fill="#4a90d9" stroke="#3a3630" stroke-width="2.2" stroke-linejoin="round"/>
-    </g>
-    <!-- 業種：製薬（フラスコ＋カプセル） -->
-    <g id="ico-pharma">
-      <path d="M20 6 h8 v10 l7 16 a4 4 0 0 1 -4 5 H17 a4 4 0 0 1 -4 -5 l7 -16 Z" fill="#e8f2fc" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M16.5 27 h15 l3.5 8 a2.5 2.5 0 0 1 -2.5 2.5 H15.5 A2.5 2.5 0 0 1 13 35 Z" fill="#4a90d9" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M18 5.5 h12" stroke="#3a3630" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="21" cy="32" r="1.8" fill="#fff"/>
-      <circle cx="27" cy="34" r="1.5" fill="#ffd23f"/>
-      <g transform="rotate(-35 38 14)">
-        <rect x="32" y="10.5" width="12" height="7" rx="3.5" fill="#ffd23f" stroke="#3a3630" stroke-width="2.2"/>
-        <path d="M38 10.5 v7" stroke="#3a3630" stroke-width="2"/>
-      </g>
-    </g>
-    <!-- 業種：運送（トラック） -->
-    <g id="ico-truck">
-      <rect x="3" y="12" width="24" height="16" rx="3" fill="#f59f4a" stroke="#3a3630" stroke-width="2.6"/>
-      <path d="M27 17 h9 l6 7 v4 h-15 Z" fill="#e8f2fc" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M30 19.5 h5 l3.5 4.5 H30 Z" fill="#4a90d9"/>
-      <circle cx="12" cy="30" r="4.5" fill="#3a3630"/>
-      <circle cx="12" cy="30" r="2" fill="#fff"/>
-      <circle cx="34" cy="30" r="4.5" fill="#3a3630"/>
-      <circle cx="34" cy="30" r="2" fill="#fff"/>
-      <path d="M8 17 h9 M8 21 h6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
-    </g>
-    <!-- 業種：プレス溶接（火花） -->
-    <g id="ico-weld">
-      <path d="M8 8 h26 v10 H8 Z" fill="#4a90d9" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M17 18 h10 v7 h-10 Z" fill="#8a8378" stroke="#3a3630" stroke-width="2.4"/>
-      <path d="M10 31 h24 v6 H10 Z" fill="#f59f4a" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M22 25 v3 M15 26 l2 3 M29 26 l-2 3" stroke="#ffd23f" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="22" cy="29.5" r="2.4" fill="#ffd23f" stroke="#3a3630" stroke-width="1.6"/>
-      <path d="M13 12 h6 M25 12 h6" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-    </g>
-    <!-- 業種：プレス加工（歯車） -->
-    <g id="ico-gear">
-      <path d="M22 4 l2.6 5 5.5 -1.4 .8 5.6 5.6 .8 -1.4 5.5 5 2.6 -5 2.6 1.4 5.5 -5.6 .8 -.8 5.6 -5.5 -1.4 -2.6 5 -2.6 -5 -5.5 1.4 -.8 -5.6 -5.6 -.8 1.4 -5.5 -5 -2.6 5 -2.6 -1.4 -5.5 5.6 -.8 .8 -5.6 5.5 1.4 Z" fill="#f59f4a" stroke="#3a3630" stroke-width="2.4" stroke-linejoin="round"/>
-      <circle cx="22" cy="22" r="7.5" fill="#fff7d6" stroke="#3a3630" stroke-width="2.4"/>
-      <circle cx="22" cy="22" r="2.8" fill="#3a3630"/>
-    </g>
-    <!-- 業種：省エネ（電気＋葉っぱ） -->
-    <g id="ico-eco">
-      <path d="M24 4 L12 24 h8 l-3 16 L32 19 h-9 Z" fill="#ffd23f" stroke="#3a3630" stroke-width="2.6" stroke-linejoin="round"/>
-      <path d="M34 26 q8 0 8 9 q-9 0 -9 -8" fill="#5cb85c" stroke="#3a3630" stroke-width="2.2" stroke-linejoin="round"/>
-      <path d="M35 34 q3 -3 6 -5" fill="none" stroke="#3a3630" stroke-width="1.8" stroke-linecap="round"/>
+    <!-- 装飾：カレンダー -->
+    <g id="ico-cal">
+      <rect x="3" y="5" width="22" height="20" rx="4" fill="#fff" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M3 11 h22" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M9 2 v5 M19 2 v5" stroke="#f59f4a" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="10" cy="17" r="2" fill="#4a90d9"/>
+      <circle cx="18" cy="17" r="2" fill="#ffd23f"/>
     </g>
   </defs>
 </svg>
@@ -607,14 +635,14 @@
 
 <!-- ===== ヒーロー ===== -->
 <section class="hero">
-  <svg class="hero-deco d1" width="32" height="32" viewBox="0 0 32 32"><use href="#ico-trophy"/></svg>
+  <svg class="hero-deco d1" width="32" height="32" viewBox="0 0 32 32"><use href="#ico-bulb"/></svg>
   <svg class="hero-deco d2" width="30" height="30" viewBox="0 0 30 30"><use href="#ico-money"/></svg>
   <svg class="hero-deco d3" width="28" height="28" viewBox="0 0 28 28"><use href="#ico-factory"/></svg>
   <span class="hero-kicker">
     町工場の社長 × 中小企業診断士
   </span>
-  <h1>「ウチみたいな会社でも、<br class="sp-only">通るの？」<br><em>——通ってます。実例をご覧ください。</em></h1>
-  <p>ベルテックジャパンが申請支援し、採択された事例の一例です（守秘義務に配慮し、業種・地域での表記）。</p>
+  <h1>「で、結局<br class="sp-only">いくらかかるの？」<br><em>——お金の話、先に全部お見せします。</em></h1>
+  <p>ベルテックジャパンの補助金申請サポートの内容と料金です。読むのにかかるのは約2分です。</p>
 </section>
 
 <!-- 波区切り -->
@@ -622,111 +650,121 @@
   <path d="M0 16 Q60 0 120 16 T240 16 T360 16 T480 16 T600 16 T720 16 T840 16 T960 16 T1080 16 T1200 16 T1320 16 T1440 16 V32 H0 Z" fill="#fff7d6"/>
 </svg>
 
-<!-- ===== 本文 ===== -->
+<!-- ===== 会話 ===== -->
 <main class="chat-wrap">
 
-  <!-- 冒頭の会話 -->
+  <!-- 1（表情1: 疑い） -->
   <div class="msg boss">
     <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-1"/></svg></div>
     <div class="body">
       <div class="name">社長</div>
-      <div class="bubble">実際どんな会社が<strong>採択されてる</strong>の？</div>
+      <div class="bubble">こういうのって、<strong>料金が分かりにくい</strong>んだよなぁ。</div>
     </div>
   </div>
 
+  <!-- 2 -->
   <div class="msg expert">
     <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
     <div class="body">
       <div class="name">診断士</div>
-      <div class="bubble">業種も設備もさまざまです。<strong>金額と一緒に</strong>ご紹介します！</div>
+      <div class="bubble">うちは<strong>2つだけ</strong>です。先に全部お見せします！</div>
     </div>
   </div>
 
-  <!-- 事例1 -->
+  <!-- 料金カード -->
   <section class="card">
-    <div class="card-label">CASE 01</div>
-    <div class="case-card">
-      <div class="case-icon"><svg width="52" height="52" viewBox="0 0 48 44"><use href="#ico-pharma"/></svg></div>
-      <div class="case-body">
-        <span class="case-kind">省力化投資補助金（一般型）</span>
-        <div class="case-title">製薬業（兵庫）</div>
-        <div class="case-amt"><span class="cap">採択額</span><span class="num">2,091</span><span class="unit">万円</span></div>
+    <div class="card-label">PRICE</div>
+    <h3><svg width="26" height="26" viewBox="0 0 30 30"><use href="#ico-money"/></svg>料金は、この2つだけ</h3>
+    <div class="price-grid">
+      <div class="price-card first">
+        <span class="step">01｜契約時</span>
+        <h4>契約時実務費用</h4>
+        <div class="amount">10<span class="unit">万円</span></div>
+        <div class="amount-cap">最初の一度だけ</div>
+        <p class="desc">申請に着手するための費用です。計画づくり・申請書作成に取りかかります。</p>
+      </div>
+      <div class="price-card second">
+        <span class="step">02｜採択後</span>
+        <h4>成功報酬</h4>
+        <div class="amount">交付決定額の<br>10<span class="unit">%</span></div>
+        <div class="amount-cap">採択されなければ発生しません</div>
+        <p class="desc">補助金の交付が決まってから頂く成功報酬です。</p>
       </div>
     </div>
+    <div class="price-band">
+      <svg width="22" height="22" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+      <span>不採択でも、再挑戦のたびに契約時実務費用を追加でいただくことはありません。<b>最初の10万円だけで、採択されるまで一緒に挑戦し続けます。</b></span>
+    </div>
+    <p class="note">※ 金額は目安です。実際の費用・条件は案件ごとに個別にご提示します。ご相談・お見積りは無料です。</p>
   </section>
 
-  <!-- 事例2 -->
+  <!-- 例で見せる -->
   <section class="card">
-    <div class="card-label">CASE 02</div>
-    <div class="case-card">
-      <div class="case-icon"><svg width="54" height="50" viewBox="0 0 44 38"><use href="#ico-truck"/></svg></div>
-      <div class="case-body">
-        <span class="case-kind">事業再構築補助金</span>
-        <div class="case-title">運送業（京都）</div>
-        <div class="case-amt"><span class="cap">採択額</span><span class="num">1,180</span><span class="unit">万円</span></div>
+    <div class="card-label">EXAMPLE</div>
+    <h3><svg width="26" height="26" viewBox="0 0 28 28"><use href="#ico-factory"/></svg>2,000万円の設備投資・補助率1/2の場合のめやす</h3>
+    <div class="ex-rows">
+      <div class="ex-row in">
+        <span class="l"><svg width="20" height="20" viewBox="0 0 30 30"><use href="#ico-money"/></svg>補助金（交付決定額）</span>
+        <span class="v">1,000万円</span>
+      </div>
+      <div class="ex-op">−</div>
+      <div class="ex-row out">
+        <span class="l">成功報酬<small>（交付決定額の10%）</small></span>
+        <span class="v">100万円</span>
+      </div>
+      <div class="ex-op">−</div>
+      <div class="ex-row out">
+        <span class="l">契約時実務費用</span>
+        <span class="v">10万円</span>
+      </div>
+      <div class="ex-op">＝</div>
+      <div class="ex-row sum">
+        <span class="l"><svg width="20" height="20" viewBox="0 0 28 28"><use href="#ico-check"/></svg>手元に残るイメージ</span>
+        <span class="v">890万円</span>
       </div>
     </div>
-  </section>
-
-  <!-- 事例3 -->
-  <section class="card">
-    <div class="card-label">CASE 03</div>
-    <div class="case-card">
-      <div class="case-icon"><svg width="52" height="50" viewBox="0 0 44 42"><use href="#ico-weld"/></svg></div>
-      <div class="case-body">
-        <span class="case-kind">省力化投資補助金（一般型）</span>
-        <div class="case-title">製造業（群馬・プレス溶接）</div>
-        <div class="case-amt"><span class="cap">採択額</span><span class="num">695</span><span class="unit">万円</span></div>
+    <div class="ex-bar">
+      <div class="track">
+        <div class="seg keep">手元に残る 890万円</div>
+        <div class="seg fee">報酬100万</div>
+        <div class="seg init" title="実務費用10万円"></div>
       </div>
+      <p class="cap">補助金1,000万円のうち、費用を差し引いたイメージ（緑＝手元／オレンジ＝成功報酬／黄＝実務費用）</p>
     </div>
+    <p class="note">※ あくまで一例のイメージです。補助率・上限・対象経費は制度や案件により異なります。</p>
   </section>
 
-  <!-- 事例4 -->
-  <section class="card">
-    <div class="card-label">CASE 04</div>
-    <div class="case-card">
-      <div class="case-icon"><svg width="50" height="50" viewBox="0 0 44 44"><use href="#ico-gear"/></svg></div>
-      <div class="case-body">
-        <span class="case-kind">ものづくり補助金</span>
-        <div class="case-title">製造業（プレス加工）</div>
-        <div class="case-amt"><span class="cap">採択額</span><span class="num">467</span><span class="unit">万円</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 事例5 -->
-  <section class="card">
-    <div class="card-label">CASE 05</div>
-    <div class="case-card">
-      <div class="case-icon"><svg width="50" height="50" viewBox="0 0 46 44"><use href="#ico-eco"/></svg></div>
-      <div class="case-body">
-        <span class="case-kind">省エネルギー投資促進補助金</span>
-        <div class="case-title">製造業（大阪・東大阪）</div>
-        <div class="case-amt"><span class="cap">採択額</span><span class="num">182</span><span class="unit">万円</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 対応している主な補助金 -->
+  <!-- サポートに含まれること -->
   <section class="card">
     <div class="card-label">SUPPORT</div>
-    <h3><svg width="26" height="26" viewBox="0 0 28 28"><use href="#ico-check"/></svg>対応している主な補助金</h3>
-    <div class="chip-row">
-      <span class="chip c1">事業再構築補助金</span>
-      <span class="chip c2">ものづくり補助金</span>
-      <span class="chip c3">中小企業省力化投資補助金</span>
-      <span class="chip c4">省エネルギー投資促進補助金</span>
-      <span class="chip c5">各自治体の補助金</span>
-    </div>
-    <div class="chip-note">クレーン・治具・研削盤・廃棄物処理・洗車機・各種システムなど、幅広い業種・設備で多数の採択実績があります。</div>
+    <h3><svg width="26" height="26" viewBox="0 0 28 28"><use href="#ico-check"/></svg>サポートに含まれること</h3>
+    <ul class="check-list">
+      <li>
+        <svg width="20" height="20" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+        <span><b>無料診断・制度選び</b>——御社の状況をうかがい、対象になりそうな補助金制度を一緒に整理します。</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+        <span><b>事業計画書づくりの伴走</b>——ヒアリングをもとに、審査に向けた計画書づくりを一緒に進めます。</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+        <span><b>電子申請（GビズID）の準備サポート</b>——アカウント取得から提出まで、手順をご案内します。</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+        <span><b>採択後のフォロー</b>——交付申請・実績報告から入金まで、最後までお付き合いします。</span>
+      </li>
+    </ul>
+    <p class="note">※ サポートの範囲は制度・案件により異なる場合があります。詳細は個別にご案内します。</p>
   </section>
 
-  <!-- 締めの会話 -->
+  <!-- 会話締め（表情3: なるほど!） -->
   <div class="msg boss">
     <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-3"/></svg></div>
     <div class="body">
       <div class="name">社長</div>
-      <div class="bubble">なるほど、<strong>ウチの設備でもいけるかも</strong>な。</div>
+      <div class="bubble">なるほど。<strong>採択されなきゃ10%は払わなくていい</strong>のか。</div>
     </div>
   </div>
 
@@ -734,7 +772,7 @@
     <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
     <div class="body">
       <div class="name">診断士</div>
-      <div class="bubble">まずは<strong>無料診断</strong>でお調べします！</div>
+      <div class="bubble">はい。まずは<strong>無料診断</strong>から始めましょう！</div>
     </div>
   </div>
 
@@ -769,7 +807,10 @@
         LINEで無料補助金診断してみる
       </a>
       <div class="cta-sub">相談は無料です。しつこい営業は行いません。</div>
-      <div class="cta-textlink"><a href="hojokin.html">▶ 3分でわかる補助金トークを読む</a></div>
+      <div class="cta-links">
+        <a href="hojokin.html">▶ 3分でわかる補助金トーク</a>
+        <a href="cases.html">▶ 採択事例を見る</a>
+      </div>
     </div>
   </section>
 
@@ -784,9 +825,10 @@
 <section class="disclaimer">
   <h4><svg width="16" height="16" viewBox="0 0 28 28"><use href="#ico-check"/></svg>ご留意事項</h4>
   <ul>
-    <li>守秘義務に配慮し、業種・地域での表記としています。いずれも当社が申請支援を行い採択された実績の一例です。</li>
-    <li>補助金には審査があり、申請すれば必ず採択されるものではありません。掲載の事例は過去の実績であり、採択を保証するものではありません。</li>
-    <li>補助金制度は年度により変更されます。最新情報は各制度の公式サイト・公募要領でご確認ください。</li>
+    <li>補助金には審査があり、申請すれば必ず採択されるものではありません。当社は採択を保証するものではありません。</li>
+    <li>本ページの記載は2026年8月時点の内容です。制度の内容・スケジュールは変更される場合があります。最新情報は各制度の公式サイト・公募要領をご確認ください。</li>
+    <li>掲載の金額・計算例は目安のイメージです。実際の費用・条件・サポート範囲は、案件ごとに個別にご提示します。</li>
+    <li>登場人物の会話は内容理解のための構成です。実際の要件・手続きは個社の状況により異なります。</li>
   </ul>
 </section>
 
