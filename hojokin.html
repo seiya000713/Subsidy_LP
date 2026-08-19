@@ -1,221 +1,1025 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>いま使える補助金をやさしく解説｜株式会社ベルテックジャパン</title>
-  <meta name="description" content="補助金ってなに？いくら戻る？うちは対象？を専門用語なしでやさしく解説。いま募集中の省力化投資補助金（一般型）の締切・補助額・対象条件をわかりやすくまとめました。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon_48.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon_192.png" />
-  <link rel="apple-touch-icon" href="/assets/favicon_180.png" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* このページ専用の軽い装飾（tokens準拠） */
-    .hj-badge {
-      display: inline-block; background: var(--gold); color: #fff;
-      font-size: 13px; font-weight: 700; letter-spacing: .08em;
-      padding: 6px 14px; border-radius: 999px; margin-bottom: 14px;
-    }
-    .hj-lead { font-size: 16px; line-height: 2.1; color: var(--ink-soft); }
-    .hj-point {
-      background: #fff; border: 1px solid var(--rule); border-radius: 12px;
-      padding: 26px 28px; margin: 14px 0;
-    }
-    .hj-point .q { font-family: var(--serif); font-weight: 700; font-size: 18px; color: var(--navy); margin-bottom: 8px; }
-    .hj-point .a { font-size: 15px; line-height: 1.95; color: var(--ink-soft); }
-    .hj-point .a b { color: var(--navy); }
-    .hj-table { width: 100%; border-collapse: collapse; margin: 14px 0 6px; font-size: 14px; }
-    .hj-table th, .hj-table td { border: 1px solid var(--rule); padding: 10px 12px; text-align: center; }
-    .hj-table th { background: var(--navy); color: #fff; font-weight: 500; }
-    .hj-table td:first-child { background: #f6f8fb; }
-    .hj-steps { counter-reset: step; margin: 18px 0; padding: 0; list-style: none; }
-    .hj-steps li {
-      counter-increment: step; position: relative;
-      padding: 16px 18px 16px 64px; background: #fff;
-      border: 1px solid var(--rule); border-radius: 10px; margin-bottom: 10px;
-      font-size: 15px; line-height: 1.8; color: var(--ink-soft);
-    }
-    .hj-steps li::before {
-      content: counter(step); position: absolute; left: 18px; top: 50%;
-      transform: translateY(-50%);
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--navy); color: var(--gold);
-      font-family: var(--en); font-size: 17px; font-weight: 600;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hj-steps li b { color: var(--navy); }
-    .hj-deadline {
-      background: linear-gradient(135deg, var(--navy) 0%, #16294f 100%);
-      color: #fff; border-radius: 14px; padding: 30px 30px 24px; margin: 20px 0;
-    }
-    .hj-deadline .t { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 14px; }
-    .hj-deadline .t .now {
-      display: inline-block; background: var(--gold); color: var(--navy);
-      font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
-      vertical-align: 3px; margin-left: 10px;
-    }
-    .hj-deadline .row { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14.5px; line-height: 1.9; }
-    .hj-deadline .row span b { color: var(--gold); }
-    .hj-deadline .note { font-size: 12px; opacity: .75; margin-top: 12px; }
-    .hj-cta {
-      text-align: center; background: #f6f8fb; border: 1px solid var(--rule);
-      border-radius: 14px; padding: 36px 24px; margin-top: 44px;
-    }
-    .hj-cta .m { font-family: var(--serif); font-size: 20px; color: var(--navy); font-weight: 700; margin-bottom: 8px; }
-    .hj-cta .s { font-size: 14px; color: var(--ink-soft); margin-bottom: 20px; }
-    @media (max-width: 640px) {
-      .hj-table { font-size: 12.5px; }
-      .hj-table th, .hj-table td { padding: 8px 6px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金って、ウチには関係ないでしょ？｜3分でわかる補助金トーク｜株式会社ベルテックジャパン</title>
+<meta name="description" content="「補助金って大企業向けでしょ？」——実は従業員5人以下でも最大750万円。町工場の社長と中小企業診断士のトークで、補助金のきほんと省力化投資補助金（第8回公募）を3分で解説します。" />
+<link rel="canonical" href="https://www.belltecjapan.com/hojokin.html" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="補助金って、ウチには関係ないでしょ？｜3分でわかる補助金トーク" />
+<meta property="og:description" content="従業員5人以下でも最大750万円。社長と診断士の会話で補助金のきほんを3分で。" />
+<meta property="og:url" content="https://www.belltecjapan.com/hojokin.html" />
+<meta property="og:site_name" content="株式会社ベルテックジャパン" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_32.png" />
+<link rel="apple-touch-icon" href="/assets/favicon_180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fffaf0;
+    --orange:#f59f4a;
+    --orange-deep:#e2822a;
+    --blue:#4a90d9;
+    --blue-deep:#3a76b5;
+    --yellow:#ffd23f;
+    --green:#5cb85c;
+    --ink:#3a3630;
+    --muted:#8a8378;
+    --white:#ffffff;
+    --line:#f0e4cf;
+    --pastel-orange:#fff1e0;
+    --pastel-blue:#e8f2fc;
+    --pastel-yellow:#fff7d6;
+    --pastel-green:#e9f6e9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:"M PLUS Rounded 1c",-apple-system,"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN",sans-serif;
+    font-weight:500;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.8;
+    font-size:15.5px;
+  }
+  h1,h2,h3,h4,strong,b,.w800{font-weight:800;}
+
+  /* ===== Header ===== */
+  .site-header{
+    background:var(--white);
+    border-bottom:3px solid var(--yellow);
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .brand{
+    font-weight:800;
+    font-size:15px;
+    letter-spacing:.04em;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--ink);
+  }
+  .brand svg{flex:none;}
+  .header-tag{
+    font-size:11px;
+    letter-spacing:.1em;
+    color:var(--white);
+    background:var(--orange);
+    border-radius:100px;
+    padding:4px 14px;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  @media(max-width:480px){ .header-tag{display:none;} }
+
+  /* ===== Hero ===== */
+  .hero{
+    background:linear-gradient(180deg,var(--pastel-yellow) 0%,var(--cream) 100%);
+    text-align:center;
+    padding:48px 24px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    font-weight:800;
+    color:var(--orange-deep);
+    background:var(--white);
+    border:2px solid var(--orange);
+    padding:6px 18px;
+    border-radius:100px;
+    margin-bottom:20px;
+    box-shadow:0 3px 0 rgba(245,159,74,.25);
+  }
+  .hero h1{
+    font-size:clamp(24px,5.6vw,38px);
+    line-height:1.5;
+    letter-spacing:.03em;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--orange-deep);
+    background:linear-gradient(transparent 62%,var(--yellow) 62%);
+    border-radius:4px;
+    padding:0 2px;
+  }
+  .hero p{
+    font-size:14px;
+    color:var(--muted);
+    max-width:34em;
+    margin:0 auto;
+    font-weight:700;
+  }
+  .hero-deco{
+    position:absolute;
+    opacity:.9;
+  }
+  .hero-deco.d1{top:26px;left:6%;}
+  .hero-deco.d2{top:110px;right:7%;}
+  .hero-deco.d3{bottom:22px;left:12%;}
+  @media(max-width:600px){
+    .hero-deco.d1{left:2%;transform:scale(.8);}
+    .hero-deco.d2{right:2%;transform:scale(.8);}
+    .hero-deco.d3{display:none;}
+  }
+
+  /* wave divider */
+  .wave{display:block;width:100%;height:32px;}
+
+  /* ===== Chat area ===== */
+  .chat-wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:8px 16px 40px;
+    position:relative;
+    z-index:2;
+  }
+  .chat-legend{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px 22px;
+    background:var(--white);
+    border:2px solid var(--line);
+    border-radius:24px;
+    padding:16px 14px;
+    margin-bottom:34px;
+    box-shadow:0 6px 0 rgba(240,228,207,.6);
+  }
+  .legend-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:12.5px;
+    color:var(--muted);
+    font-weight:700;
+  }
+  .legend-item strong{
+    display:block;
+    font-size:13.5px;
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .legend-item svg{flex:none;}
+
+  .chat-date{
+    text-align:center;
+    margin:6px 0 26px;
+  }
+  .chat-date span{
+    display:inline-block;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    font-weight:700;
+    color:var(--orange-deep);
+    background:var(--pastel-yellow);
+    border:2px dashed var(--yellow);
+    border-radius:100px;
+    padding:5px 18px;
+  }
+
+  .msg{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .msg .avatar{
+    flex:none;
+    width:52px;height:52px;
+    border-radius:50%;
+    overflow:hidden;
+    background:var(--white);
+  }
+  .msg.boss .avatar{border:3px solid var(--orange);}
+  .msg.expert .avatar{border:3px solid var(--blue);}
+  .msg .body{max-width:76%;}
+  .msg .name{
+    font-size:11.5px;
+    font-weight:800;
+    margin-bottom:4px;
+    letter-spacing:.05em;
+  }
+  .msg.boss .name{color:var(--orange-deep);}
+  .msg.expert .name{color:var(--blue-deep);}
+  .bubble{
+    padding:14px 18px;
+    font-size:15px;
+    line-height:1.85;
+    position:relative;
+  }
+  /* 社長 = 左・白＋オレンジ縁 */
+  .msg.boss{flex-direction:row;}
+  .msg.boss .bubble{
+    background:var(--white);
+    border:2.5px solid var(--orange);
+    border-radius:22px 22px 22px 6px;
+    box-shadow:0 4px 0 rgba(245,159,74,.22);
+  }
+  /* 診断士 = 右・ソフトブルー塗り */
+  .msg.expert{flex-direction:row-reverse;}
+  .msg.expert .body{text-align:left;}
+  .msg.expert .name{text-align:right;}
+  .msg.expert .bubble{
+    background:var(--blue);
+    color:#ffffff;
+    border-radius:22px 22px 6px 22px;
+    box-shadow:0 4px 0 rgba(58,118,181,.35);
+  }
+  .msg.expert .bubble strong{color:var(--yellow);}
+  .msg.boss .bubble strong{color:var(--orange-deep);}
+  .bubble small{
+    display:block;
+    margin-top:6px;
+    font-size:11.5px;
+    opacity:.85;
+    line-height:1.6;
+    font-weight:500;
+  }
+
+  /* 装飾アイコン行 */
+  .deco-row{
+    display:flex;
+    justify-content:center;
+    gap:26px;
+    margin:2px 0 26px;
+    opacity:.95;
+  }
+
+  /* ===== Figure cards ===== */
+  .card{
+    background:var(--white);
+    border:2px solid var(--line);
+    border-radius:28px;
+    padding:28px 24px;
+    margin:6px 0 32px;
+    box-shadow:0 8px 0 rgba(240,228,207,.55);
+  }
+  .card-label{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:11px;
+    letter-spacing:.16em;
+    color:var(--orange-deep);
+    font-weight:800;
+    background:var(--pastel-orange);
+    border-radius:100px;
+    padding:4px 14px;
+    margin-bottom:10px;
+  }
+  .card h3{
+    font-size:18.5px;
+    color:var(--ink);
+    letter-spacing:.03em;
+    margin-bottom:18px;
+    line-height:1.5;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .card h3 svg{flex:none;}
+  .card .note{
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:14px;
+    line-height:1.7;
+    font-weight:500;
+  }
+
+  /* 上限バー（丸端バーグラフ） */
+  .limit-bars{display:flex;flex-direction:column;gap:13px;}
+  .limit-row{display:flex;align-items:center;gap:10px;}
+  .limit-row .lbl{
+    flex:none;
+    width:72px;
+    font-size:12.5px;
+    font-weight:800;
+    color:var(--muted);
+    text-align:right;
+    line-height:1.3;
+  }
+  .limit-row.hl .lbl{color:var(--orange-deep);}
+  .limit-row .track{
+    flex:1;
+    height:26px;
+    background:var(--pastel-yellow);
+    border-radius:100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .limit-row .fill{
+    height:100%;
+    border-radius:100px;
+    background:linear-gradient(90deg,var(--yellow),var(--orange));
+    min-width:26px;
+  }
+  .limit-row.hl .fill{background:linear-gradient(90deg,var(--orange),var(--orange-deep));}
+  .limit-row .amt{
+    flex:none;
+    width:92px;
+    font-size:15.5px;
+    font-weight:800;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .limit-row.hl .amt{color:var(--orange-deep);}
+  .limit-row .amt .yen{font-size:11px;font-weight:700;color:var(--muted);margin-left:2px;}
+  .limit-row.hl .badge-you{
+    display:inline-block;
+    font-size:10px;
+    background:var(--orange);
+    color:#fff;
+    border-radius:100px;
+    padding:1px 8px;
+    margin-left:4px;
+    font-weight:800;
+    vertical-align:2px;
+    white-space:nowrap;
+  }
+  .limit-plus{
+    margin-top:18px;
+    background:var(--pastel-green);
+    border:2px dashed var(--green);
+    color:var(--ink);
+    border-radius:18px;
+    padding:12px 16px;
+    font-size:13.5px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    line-height:1.6;
+    font-weight:700;
+  }
+  .limit-plus b{color:var(--green);font-size:16px;}
+  .limit-plus .tag{
+    flex:none;
+    font-size:10.5px;
+    letter-spacing:.06em;
+    background:var(--green);
+    color:#fff;
+    border-radius:100px;
+    padding:3px 11px;
+    font-weight:800;
+  }
+
+  /* 補助率図解 */
+  .rate-flow{
+    display:flex;
+    align-items:stretch;
+    gap:10px;
+    margin-top:4px;
+  }
+  .rate-box{
+    flex:1;
+    border-radius:20px;
+    padding:16px 10px;
+    text-align:center;
+  }
+  .rate-box .cap{font-size:11.5px;letter-spacing:.04em;margin-bottom:4px;font-weight:700;}
+  .rate-box .val{
+    font-weight:800;
+    font-size:clamp(18px,4.6vw,24px);
+    line-height:1.3;
+  }
+  .rate-box .sub{font-size:10.5px;margin-top:4px;font-weight:700;}
+  .rate-box.pay{
+    background:var(--pastel-orange);
+    border:2px solid var(--orange);
+    color:var(--ink);
+  }
+  .rate-box.pay .cap,.rate-box.pay .sub{color:var(--orange-deep);}
+  .rate-box.back{
+    background:var(--pastel-blue);
+    border:2px solid var(--blue);
+    color:var(--ink);
+  }
+  .rate-box.back .val{color:var(--blue-deep);}
+  .rate-box.back .cap,.rate-box.back .sub{color:var(--blue-deep);}
+  .rate-arrow{
+    flex:none;
+    display:flex;
+    align-items:center;
+    color:var(--orange);
+  }
+  .rate-bar{margin-top:20px;}
+  .rate-bar .track{
+    display:flex;
+    height:36px;
+    border-radius:100px;
+    overflow:hidden;
+    border:2px solid var(--line);
+    background:var(--white);
+  }
+  .rate-bar .seg{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.02em;
+  }
+  .rate-bar .seg.self{flex:1;background:var(--pastel-yellow);color:var(--orange-deep);}
+  .rate-bar .seg.subsidy{flex:1;background:var(--green);color:#fff;}
+  .rate-bar .cap{font-size:11.5px;color:var(--muted);margin-top:8px;text-align:center;font-weight:700;}
+
+  /* タイムライン */
+  .timeline{
+    list-style:none;
+    margin-top:4px;
+    position:relative;
+    padding-left:30px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:9px;top:10px;bottom:10px;
+    width:4px;
+    border-radius:100px;
+    background:var(--pastel-yellow);
+  }
+  .timeline li{
+    position:relative;
+    padding:0 0 22px 0;
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-28px;top:6px;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:var(--white);
+    border:4px solid var(--orange);
+  }
+  .timeline li.now::before{background:var(--yellow);border-color:var(--orange);}
+  .timeline .when{
+    font-size:11.5px;
+    letter-spacing:.06em;
+    color:var(--orange-deep);
+    font-weight:800;
+  }
+  .timeline .what{
+    font-size:14.5px;
+    font-weight:800;
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .timeline .detail{
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.65;
+    font-weight:500;
+  }
+  .timeline .badge{
+    display:inline-block;
+    font-size:10.5px;
+    background:var(--orange);
+    color:#fff;
+    border-radius:100px;
+    padding:1px 10px;
+    margin-left:6px;
+    letter-spacing:.04em;
+    vertical-align:1px;
+    font-weight:800;
+  }
+  .caution-strip{
+    margin-top:18px;
+    border:2px dashed var(--orange);
+    background:var(--pastel-orange);
+    border-radius:18px;
+    padding:13px 15px;
+    font-size:13px;
+    line-height:1.7;
+    color:var(--ink);
+    font-weight:700;
+    display:flex;
+    gap:9px;
+    align-items:flex-start;
+  }
+  .caution-strip svg{flex:none;margin-top:3px;}
+  .caution-strip b{color:var(--orange-deep);}
+
+  /* ===== CTA ===== */
+  .cta-card{
+    background:linear-gradient(180deg,var(--pastel-blue),#dcecfb);
+    border:2px solid var(--blue);
+    text-align:center;
+    padding:38px 22px 34px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-card .confetti{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+  .cta-card .cta-inner{position:relative;z-index:1;}
+  .cta-card .card-label{
+    background:var(--white);
+    color:var(--blue-deep);
+  }
+  .cta-card h3{
+    color:var(--ink);
+    font-size:22px;
+    margin-bottom:8px;
+    justify-content:center;
+  }
+  .cta-card p{font-size:13.5px;color:var(--ink);margin-bottom:22px;line-height:1.9;font-weight:700;}
+  .cta-card p b{color:var(--blue-deep);}
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-weight:800;
+    font-size:17px;
+    letter-spacing:.03em;
+    border-radius:100px;
+    padding:18px 34px;
+    text-decoration:none;
+    border:3px solid var(--ink);
+    box-shadow:0 6px 0 var(--orange);
+    transition:transform .15s ease,box-shadow .15s ease;
+    max-width:100%;
+  }
+  .cta-btn:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--orange);}
+  .cta-sub{
+    margin-top:16px;
+    font-size:11.5px;
+    color:var(--blue-deep);
+    letter-spacing:.03em;
+    font-weight:700;
+  }
+
+  /* ===== Disclaimer / footer ===== */
+  .disclaimer{
+    max-width:680px;
+    margin:0 auto;
+    padding:8px 20px 36px;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.8;
+    font-weight:500;
+  }
+  .disclaimer h4{
+    font-size:11.5px;
+    font-weight:800;
+    color:var(--muted);
+    letter-spacing:.1em;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .disclaimer ul{padding-left:1.3em;}
+  .site-footer{
+    background:var(--orange);
+    color:#fff;
+    text-align:center;
+    font-size:11.5px;
+    padding:24px 16px;
+    letter-spacing:.04em;
+    font-weight:700;
+  }
+  .site-footer .fbrand{
+    font-size:13.5px;
+    font-weight:800;
+    letter-spacing:.08em;
+    margin-bottom:4px;
+  }
+
+  .sp-only{display:none;}
+  @media(max-width:480px){ .sp-only{display:inline;} }
+  @media(max-width:420px){
+    .msg .body{max-width:80%;}
+    .msg .avatar{width:44px;height:44px;}
+    .bubble{font-size:14.5px;padding:12px 14px;}
+    .card{padding:22px 16px;}
+    .limit-row .lbl{width:58px;font-size:11.5px;}
+    .limit-row .amt{width:78px;font-size:14px;}
+    .deco-row{gap:18px;}
+  }
+</style>
 </head>
 <body>
 
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/logo_white.png" alt="株式会社ベルテックジャパン" />
-        <span class="brand-name">株式会社ベルテックジャパン</span>
-      </a>
-      <nav class="gnav">
-        <a href="index.html#services">サービス</a>
-        <a href="results.html">実績</a>
-        <a href="cases.html">採択事例</a>
-        <a href="index.html#company">会社概要</a>
-      </nav>
-      <a href="index.html#contact" class="btn btn-gold header-cta">お問い合わせ</a>
-    </div>
-  </header>
+<!-- ===== SVG定義（顔・装飾アイコン） ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- 社長ベース：はちまき・輪郭（表情別シンボルから参照） -->
+    <g id="boss-base">
+      <circle cx="50" cy="50" r="50" fill="#fff1e0"/>
+      <!-- 顔 -->
+      <circle cx="50" cy="56" r="29" fill="#ffe3c2" stroke="#3a3630" stroke-width="3"/>
+      <!-- 耳 -->
+      <circle cx="21" cy="58" r="5" fill="#ffe3c2" stroke="#3a3630" stroke-width="3"/>
+      <circle cx="79" cy="58" r="5" fill="#ffe3c2" stroke="#3a3630" stroke-width="3"/>
+      <!-- はちまき（タオル） -->
+      <path d="M20 43 Q50 27 80 43 L80 52 Q50 37 20 52 Z" fill="#ffffff" stroke="#3a3630" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M31 45 l4 4 M42 41 l4 4 M54 39 l4 4 M66 41 l4 4" stroke="#f59f4a" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- 結び目 -->
+      <path d="M79 45 l9 -5 M80 50 l10 1" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <!-- ほっぺ -->
+      <circle cx="33" cy="67" r="4" fill="#f8b98a" opacity=".7"/>
+      <circle cx="67" cy="67" r="4" fill="#f8b98a" opacity=".7"/>
+    </g>
+    <!-- 社長：表情1 疑い（眉ひそめ・への字口） -->
+    <g id="face-boss-1">
+      <use href="#boss-base"/>
+      <path d="M35 55 q6 -4 11 -1 M54 54 q5 -3 11 1" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="41" cy="61" r="2.8" fill="#3a3630"/>
+      <circle cx="59" cy="61" r="2.8" fill="#3a3630"/>
+      <path d="M42 76 q8 -5 16 0" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- 社長：表情2 ふーん（眉ゆるみ・口平ら） -->
+    <g id="face-boss-2">
+      <use href="#boss-base"/>
+      <path d="M35 54 q6 -3 11 -1 M54 53 q5 -2 11 1" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="41" cy="61" r="2.8" fill="#3a3630"/>
+      <circle cx="59" cy="61" r="2.8" fill="#3a3630"/>
+      <path d="M43 75 q7 2 14 0" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- 社長：表情3 なるほど!（眉上がり・にっこり） -->
+    <g id="face-boss-3">
+      <use href="#boss-base"/>
+      <path d="M35 52 q6 -4 11 -2 M54 50 q5 -2 11 2" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <path d="M37 61 q4 -4 8 0" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <path d="M55 61 q4 -4 8 0" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+      <path d="M41 72 q9 9 18 0" fill="none" stroke="#3a3630" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- 診断士：メガネにこにこ -->
+    <g id="face-expert">
+      <circle cx="50" cy="50" r="50" fill="#e8f2fc"/>
+      <!-- スーツ -->
+      <path d="M20 100 Q23 75 50 73 Q77 75 80 100 Z" fill="#4a90d9" stroke="#3a3630" stroke-width="3"/>
+      <path d="M50 73 l-7 9 7 12 7 -12 Z" fill="#ffffff" stroke="#3a3630" stroke-width="2"/>
+      <path d="M50 82 l-3 4 3 8 3 -8 Z" fill="#ffd23f"/>
+      <!-- 顔 -->
+      <circle cx="50" cy="46" r="25" fill="#ffe9d6" stroke="#3a3630" stroke-width="3"/>
+      <!-- 髪 -->
+      <path d="M26 43 Q28 19 50 19 Q72 19 74 43 Q62 31 50 31 Q38 31 26 43 Z" fill="#5a4a3a" stroke="#3a3630" stroke-width="2.5" stroke-linejoin="round"/>
+      <!-- メガネ -->
+      <rect x="32" y="42" width="15" height="12" rx="6" fill="#ffffff" fill-opacity=".5" stroke="#3a3630" stroke-width="2.6"/>
+      <rect x="53" y="42" width="15" height="12" rx="6" fill="#ffffff" fill-opacity=".5" stroke="#3a3630" stroke-width="2.6"/>
+      <path d="M47 47.5 h6" stroke="#3a3630" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- 目（にこにこ弧） -->
+      <path d="M36 48 q3.5 -3.5 7 0" fill="none" stroke="#3a3630" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M57 48 q3.5 -3.5 7 0" fill="none" stroke="#3a3630" stroke-width="2.6" stroke-linecap="round"/>
+      <!-- ほっぺ -->
+      <circle cx="34" cy="55" r="3.5" fill="#f8b98a" opacity=".7"/>
+      <circle cx="66" cy="55" r="3.5" fill="#f8b98a" opacity=".7"/>
+      <!-- 口 -->
+      <path d="M44 59 q6 6 12 0" fill="none" stroke="#3a3630" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <!-- 装飾：電球 -->
+    <g id="ico-bulb">
+      <circle cx="16" cy="13" r="9" fill="#ffd23f" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M13 22 h6 v3 a3 3 0 0 1 -6 0 Z" fill="#fff" stroke="#3a3630" stroke-width="2"/>
+      <path d="M16 1 v3 M28 13 h3 M1 13 h3 M25 4 l-2 2 M7 4 l2 2" stroke="#f59f4a" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+    <!-- 装飾：お金 -->
+    <g id="ico-money">
+      <circle cx="15" cy="15" r="12" fill="#ffd23f" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M11 9 l4 6 4 -6 M15 15 v7 M11.5 15.5 h7 M11.5 19 h7" stroke="#3a3630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+    <!-- 装飾：工場 -->
+    <g id="ico-factory">
+      <path d="M4 26 V12 l7 5 v-5 l7 5 v-5 l8 5 v9 Z" fill="#4a90d9" stroke="#3a3630" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="8" y="4" width="4" height="8" fill="#f59f4a" stroke="#3a3630" stroke-width="2"/>
+      <rect x="9" y="20" width="4" height="3.5" fill="#fff"/>
+      <rect x="16" y="20" width="4" height="3.5" fill="#fff"/>
+    </g>
+    <!-- 装飾：チェックマーク -->
+    <g id="ico-check">
+      <circle cx="14" cy="14" r="12" fill="#5cb85c" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M8.5 14.5 l4 4 7 -8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- 装飾：カレンダー -->
+    <g id="ico-cal">
+      <rect x="3" y="5" width="22" height="20" rx="4" fill="#fff" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M3 11 h22" stroke="#3a3630" stroke-width="2.2"/>
+      <path d="M9 2 v5 M19 2 v5" stroke="#f59f4a" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="10" cy="17" r="2" fill="#4a90d9"/>
+      <circle cx="18" cy="17" r="2" fill="#ffd23f"/>
+    </g>
+  </defs>
+</svg>
 
-  <section class="contact-head">
-    <div class="contact-head-bg" style="background-image:url('assets/contact_bg.png')"></div>
-    <div class="contact-head-overlay"></div>
-    <div class="container">
-      <p class="eyebrow eyebrow-light">SUBSIDY GUIDE</p>
-      <h2 class="contact-head-title">いま使える補助金</h2>
+<!-- ===== ヘッダー ===== -->
+<header class="site-header">
+  <a class="brand" href="index.html" style="text-decoration:none;">
+    <svg width="24" height="24" viewBox="0 0 28 28"><use href="#ico-factory"/></svg>
+    株式会社ベルテックジャパン
+  </a>
+  <div class="header-tag">補助金活用サポート</div>
+</header>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <svg class="hero-deco d1" width="32" height="32" viewBox="0 0 32 32"><use href="#ico-bulb"/></svg>
+  <svg class="hero-deco d2" width="30" height="30" viewBox="0 0 30 30"><use href="#ico-money"/></svg>
+  <svg class="hero-deco d3" width="28" height="28" viewBox="0 0 28 28"><use href="#ico-factory"/></svg>
+  <span class="hero-kicker">
+    町工場の社長 × 中小企業診断士
+  </span>
+  <h1>「補助金って、<br class="sp-only">ウチには関係ないでしょ？」<br><em>——実は、そこからの話です。</em></h1>
+  <p>よくある社長の疑問に、中小企業診断士がトーク形式でお答えします。読むのにかかるのは約3分です。</p>
+</section>
+
+<!-- 波区切り -->
+<svg class="wave" viewBox="0 0 1440 32" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 16 Q60 0 120 16 T240 16 T360 16 T480 16 T600 16 T720 16 T840 16 T960 16 T1080 16 T1200 16 T1320 16 T1440 16 V32 H0 Z" fill="#fff7d6"/>
+</svg>
+
+<!-- ===== 会話 ===== -->
+<main class="chat-wrap">
+
+  <div class="chat-legend">
+    <div class="legend-item">
+      <svg width="44" height="44" viewBox="0 0 100 100"><use href="#face-boss-1"/></svg>
+      <div><strong>町工場の社長</strong>従業員5名・金属加工</div>
+    </div>
+    <div class="legend-item">
+      <svg width="44" height="44" viewBox="0 0 100 100"><use href="#face-expert"/></svg>
+      <div><strong>中小企業診断士</strong>ベルテックジャパン</div>
+    </div>
+  </div>
+
+  <div class="chat-date"><span>とある平日の昼、工場の事務所にて</span></div>
+
+  <!-- 1（表情1: 疑い） -->
+  <div class="msg boss">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-1"/></svg></div>
+    <div class="body">
+      <div class="name">社長</div>
+      <div class="bubble">補助金って、どうせウチみたいな<strong>小さい会社は無理</strong>でしょ？</div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="msg expert">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
+    <div class="body">
+      <div class="name">診断士</div>
+      <div class="bubble">いえいえ、むしろ小さい会社のための制度なんです。実は<strong>従業員5人以下でも最大750万円</strong>の補助が受けられます。</div>
+    </div>
+  </div>
+
+  <!-- 図解1: 上限バー -->
+  <section class="card">
+    <div class="card-label">FIGURE 01</div>
+    <h3><svg width="26" height="26" viewBox="0 0 30 30"><use href="#ico-money"/></svg>従業員数別・補助上限額のめやす</h3>
+    <div class="limit-bars">
+      <div class="limit-row hl">
+        <div class="lbl">5人以下</div>
+        <div class="track"><div class="fill" style="width:14%;"></div></div>
+        <div class="amt">750<span class="yen">万円</span><span class="badge-you">← 御社</span></div>
+      </div>
+      <div class="limit-row">
+        <div class="lbl">6〜20人</div>
+        <div class="track"><div class="fill" style="width:24%;"></div></div>
+        <div class="amt">1,500<span class="yen">万円</span></div>
+      </div>
+      <div class="limit-row">
+        <div class="lbl">21〜50人</div>
+        <div class="track"><div class="fill" style="width:42%;"></div></div>
+        <div class="amt">3,000<span class="yen">万円</span></div>
+      </div>
+      <div class="limit-row">
+        <div class="lbl">51〜100人</div>
+        <div class="track"><div class="fill" style="width:66%;"></div></div>
+        <div class="amt">5,000<span class="yen">万円</span></div>
+      </div>
+      <div class="limit-row">
+        <div class="lbl">101人以上</div>
+        <div class="track"><div class="fill" style="width:100%;"></div></div>
+        <div class="amt">8,000<span class="yen">万円</span></div>
+      </div>
+    </div>
+    <div class="limit-plus">
+      <span class="tag">賃上げ特例</span>
+      <span>大幅な賃上げに取り組む場合、上限は<b>最大1億円</b>まで引き上げの対象になります。</span>
+    </div>
+    <p class="note">※ 中小企業省力化投資補助金（一般型）の例。制度・回次により金額や要件は変わります。</p>
+  </section>
+
+  <!-- 3（表情1: 疑い） -->
+  <div class="msg boss">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-1"/></svg></div>
+    <div class="body">
+      <div class="name">社長</div>
+      <div class="bubble">タダでもらえるの？　<strong>怪しくない？</strong></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="msg expert">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
+    <div class="body">
+      <div class="name">診断士</div>
+      <div class="bubble">お気持ちは分かります（笑）。でも<strong>国の正式な制度</strong>です。設備費用の<strong>1/2〜2/3</strong>が補助されます。ただし誰でももらえるわけではなく、<strong>審査があります</strong>。</div>
+    </div>
+  </div>
+
+  <!-- 図解2: 補助率 -->
+  <section class="card">
+    <div class="card-label">FIGURE 02</div>
+    <h3><svg width="26" height="26" viewBox="0 0 28 28"><use href="#ico-factory"/></svg>2,000万円の機械なら、こう戻ってくる</h3>
+    <div class="rate-flow">
+      <div class="rate-box pay">
+        <div class="cap">設備投資額</div>
+        <div class="val">2,000<span style="font-size:.55em;">万円</span></div>
+        <div class="sub">いったん全額支払い</div>
+      </div>
+      <div class="rate-arrow">
+        <svg width="30" height="24" viewBox="0 0 30 24" fill="none"><path d="M2 12 h20 M16 5 l7 7 -7 7" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="rate-box back">
+        <div class="cap">補助金（1/2の場合）</div>
+        <div class="val">1,000<span style="font-size:.55em;">万円</span></div>
+        <div class="sub">後から戻ってくる</div>
+      </div>
+    </div>
+    <div class="rate-bar">
+      <div class="track">
+        <div class="seg self">自己負担 1,000万円</div>
+        <div class="seg subsidy">補助 1,000万円</div>
+      </div>
+      <p class="cap">実質負担は半分に。補助率2/3が適用される場合、負担はさらに小さくなります。</p>
+    </div>
+    <p class="note">※ 補助率・上限は制度や企業規模により異なります。補助金は原則「後払い（精算払い）」です。</p>
+  </section>
+
+  <!-- 5（表情2: ふーん） -->
+  <div class="msg boss">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-2"/></svg></div>
+    <div class="body">
+      <div class="name">社長</div>
+      <div class="bubble">でもさ、<strong>手続き面倒</strong>なんでしょ。書類とか苦手なんだよ。</div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="msg expert">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
+    <div class="body">
+      <div class="name">診断士</div>
+      <div class="bubble">そこは私たちの出番です。<strong>計画書づくりは私たちが伴走</strong>します。当社支援の採択率は<strong>96%</strong>です。<small>※ 中小企業省力化投資補助金（一般型）第1〜4回の当社支援実績。将来の採択をお約束するものではありません。</small></div>
+    </div>
+  </div>
+
+  <div class="deco-row" aria-hidden="true">
+    <svg width="28" height="28" viewBox="0 0 32 32"><use href="#ico-bulb"/></svg>
+    <svg width="28" height="28" viewBox="0 0 28 28"><use href="#ico-check"/></svg>
+    <svg width="28" height="28" viewBox="0 0 28 28"><use href="#ico-cal"/></svg>
+  </div>
+
+  <!-- 7（表情2: ふーん） -->
+  <div class="msg boss">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-2"/></svg></div>
+    <div class="body">
+      <div class="name">社長</div>
+      <div class="bubble">ふーん…。で、<strong>いつまでに何すればいい</strong>の？</div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="msg expert">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
+    <div class="body">
+      <div class="name">診断士</div>
+      <div class="bubble">いま<strong>第8回が募集中</strong>です。受付は<strong>2026年9月中旬</strong>、締切は<strong>10月中旬（予定）</strong>。ひとつだけ注意点——<strong>機械の発注は採択決定の後</strong>です。先に買ってしまうと対象外になります。</div>
+    </div>
+  </div>
+
+  <!-- 図解3: タイムライン -->
+  <section class="card">
+    <div class="card-label">FIGURE 03</div>
+    <h3><svg width="26" height="26" viewBox="0 0 28 28"><use href="#ico-cal"/></svg>申請から入金までの流れ（第8回のめやす）</h3>
+    <ol class="timeline">
+      <li class="now">
+        <div class="when">いま（2026年8月）</div>
+        <div class="what">無料相談・計画づくりスタート<span class="badge">現在地</span></div>
+        <div class="detail">現状のヒアリングと、対象になりそうな設備の整理から始めます。</div>
+      </li>
+      <li>
+        <div class="when">2026年9月中旬</div>
+        <div class="what">第8回 申請受付開始</div>
+        <div class="detail">電子申請（GビズID）で提出。書類準備は受付前に済ませておきます。</div>
+      </li>
+      <li>
+        <div class="when">2026年10月中旬（予定）</div>
+        <div class="what">申請締切</div>
+        <div class="detail">締切直前は駆け込みが集中します。余裕を持った準備が安心です。</div>
+      </li>
+      <li>
+        <div class="when">採択発表後</div>
+        <div class="what">交付決定 → 機械を発注</div>
+        <div class="detail">発注・契約は必ずこのタイミング以降。導入・支払い・実績報告へ進みます。</div>
+      </li>
+      <li>
+        <div class="when">実績報告の確認後</div>
+        <div class="what">補助金の入金</div>
+        <div class="detail">かかった経費を精算するかたちで、補助金が振り込まれます。</div>
+      </li>
+    </ol>
+    <div class="caution-strip">
+      <svg width="22" height="22" viewBox="0 0 32 32"><use href="#ico-bulb"/></svg>
+      <span><b>ここだけは要注意：</b>採択決定前に発注・契約した設備は補助対象外です。「見積までOK・発注はNG」と覚えてください。</span>
+    </div>
+    <p class="note">※ スケジュールは2026年8月時点の公表情報にもとづく予定です。変更される場合があります。</p>
+  </section>
+
+  <!-- 9（表情3: なるほど!） -->
+  <div class="msg boss">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-boss-3"/></svg></div>
+    <div class="body">
+      <div class="name">社長</div>
+      <div class="bubble">なるほどね。じゃあ、<strong>まず何から</strong>やればいい？</div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="msg expert">
+    <div class="avatar"><svg width="100%" height="100%" viewBox="0 0 100 100"><use href="#face-expert"/></svg></div>
+    <div class="body">
+      <div class="name">診断士</div>
+      <div class="bubble">かんたんです。LINEで<strong>「無料補助金診断」</strong>と送ってください。<strong>30秒</strong>で終わります。御社が対象になりそうか、まず無料でお調べします。</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="card cta-card">
+    <!-- 紙吹雪 -->
+    <svg class="confetti" viewBox="0 0 680 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect x="40" y="30" width="10" height="10" rx="2" fill="#ffd23f" transform="rotate(20 45 35)"/>
+      <rect x="120" y="70" width="8" height="8" rx="2" fill="#f59f4a" transform="rotate(-15 124 74)"/>
+      <circle cx="80" cy="130" r="5" fill="#5cb85c"/>
+      <rect x="170" y="20" width="9" height="9" rx="2" fill="#4a90d9" transform="rotate(30 174 24)"/>
+      <circle cx="220" cy="60" r="4" fill="#ffd23f"/>
+      <rect x="270" y="35" width="8" height="8" rx="2" fill="#5cb85c" transform="rotate(-25 274 39)"/>
+      <circle cx="340" cy="22" r="5" fill="#f59f4a"/>
+      <rect x="400" y="45" width="10" height="10" rx="2" fill="#ffd23f" transform="rotate(15 405 50)"/>
+      <circle cx="460" cy="28" r="4" fill="#4a90d9"/>
+      <rect x="510" y="65" width="8" height="8" rx="2" fill="#f59f4a" transform="rotate(-20 514 69)"/>
+      <circle cx="560" cy="35" r="5" fill="#5cb85c"/>
+      <rect x="610" y="80" width="9" height="9" rx="2" fill="#ffd23f" transform="rotate(25 614 84)"/>
+      <circle cx="640" cy="140" r="4" fill="#f59f4a"/>
+      <rect x="600" y="200" width="8" height="8" rx="2" fill="#4a90d9" transform="rotate(-30 604 204)"/>
+      <circle cx="60" cy="220" r="4" fill="#ffd23f"/>
+      <rect x="110" y="250" width="9" height="9" rx="2" fill="#5cb85c" transform="rotate(18 114 254)"/>
+      <circle cx="630" cy="260" r="5" fill="#ffd23f"/>
+    </svg>
+    <div class="cta-inner">
+      <div class="card-label">FREE CHECK</div>
+      <h3>無料補助金診断はこちら</h3>
+      <p>LINEで<b>「無料補助金診断」</b>と送るだけ。<br>従業員数と業種がわかれば、対象になりそうな制度をお調べします。</p>
+      <a class="cta-btn" href="https://line.me/R/ti/p/@hsm9570x">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.9 3 3 6.4 3 10.4c0 3.6 3.1 6.6 7.3 7.3.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 2-2.9 2-4.6C21 6.4 17.1 3 12 3Z" fill="#3a3630"/></svg>
+        LINEで無料補助金診断してみる
+      </a>
+      <div class="cta-sub">相談は無料です。しつこい営業は行いません。</div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container seo-body">
+</main>
 
-      <p class="hj-lead">
-        「補助金って、なんだか難しそう」——そう感じている経営者の方へ。<br />
-        このページでは、専門用語を使わずに<b>「補助金のきほん」と「いま募集中の補助金」</b>をまとめました。読むのにかかる時間は約3分です。
-      </p>
+<!-- 波区切り -->
+<svg class="wave" viewBox="0 0 1440 32" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1);">
+  <path d="M0 16 L48 8 L96 24 L144 8 L192 24 L240 8 L288 24 L336 8 L384 24 L432 8 L480 24 L528 8 L576 24 L624 8 L672 24 L720 8 L768 24 L816 8 L864 24 L912 8 L960 24 L1008 8 L1056 24 L1104 8 L1152 24 L1200 8 L1248 24 L1296 8 L1344 24 L1392 8 L1440 16 V32 H0 Z" fill="#fff7d6"/>
+</svg>
 
-      <h3 class="seo-h3">補助金のきほん　3つだけ</h3>
+<!-- ===== 免責 ===== -->
+<section class="disclaimer">
+  <h4><svg width="16" height="16" viewBox="0 0 28 28"><use href="#ico-check"/></svg>ご留意事項</h4>
+  <ul>
+    <li>本ページの内容は2026年8月時点の公表情報にもとづくものです。制度の内容・スケジュールは変更される場合があります。最新情報は各制度の公式サイト・公募要領をご確認ください。</li>
+    <li>補助金には審査があり、申請すれば必ず採択されるものではありません。当社は採択を保証するものではありません。</li>
+    <li>掲載の採択率（96%）は、中小企業省力化投資補助金（一般型）第1〜4回における当社支援案件の実績であり、将来の結果を示すものではありません。</li>
+    <li>登場人物の会話は制度理解のための構成です。実際の要件・手続きは個社の状況により異なります。</li>
+  </ul>
+</section>
 
-      <div class="hj-point">
-        <p class="q">Q1. 補助金ってなに？</p>
-        <p class="a">国や自治体が、がんばる会社の設備投資などを応援するために出すお金です。<b>融資と違って、返す必要はありません。</b>ただし「先に自社で支払い、後からお金が戻ってくる」仕組みです。</p>
-      </div>
-      <div class="hj-point">
-        <p class="q">Q2. いくら戻ってくるの？</p>
-        <p class="a">かかった費用の<b>2分の1〜3分の2</b>が目安です。たとえば2,000万円の機械を導入した場合、<b>約1,000万円が戻ってくる</b>計算になります（補助率1/2の場合）。</p>
-      </div>
-      <div class="hj-point">
-        <p class="q">Q3. 誰でももらえるの？</p>
-        <p class="a">申請すれば必ずもらえるわけではなく、<b>事業計画書による審査</b>があります。だからこそ、計画書の質で結果が大きく変わります。当社支援案件の採択率は96%です（省力化投資補助金 一般型・第1〜4回公募実績）。</p>
-      </div>
-
-      <h3 class="seo-h3">いま募集中の補助金</h3>
-
-      <div class="hj-deadline">
-        <p class="t">中小企業省力化投資補助金（一般型）第8回<span class="now">公募受付中</span></p>
-        <div class="row">
-          <span>申請受付開始：<b>2026年9月中旬（予定）</b></span>
-          <span>申請締切：<b>2026年10月中旬（予定）</b></span>
-        </div>
-        <p class="note">※日程は変更される場合があります。最新情報は<a href="https://shoryokuka.smrj.go.jp/ippan/" target="_blank" rel="noopener" style="color:#d8bd84;text-decoration:underline;">公式サイト</a>をご確認ください。申請には「GビズIDプライム」の事前取得が必要です（取得に1〜2週間）。</p>
-      </div>
-
-      <p class="hj-lead" style="margin-bottom:10px;">
-        <b>「人手不足を、機械やシステムで補う投資」を応援する補助金</b>です。ロボット・自動化設備・省力化システムの導入などが対象になります。もらえる上限額は会社の従業員数で決まります。
-      </p>
-
-      <table class="hj-table">
-        <tr><th>従業員数</th><th>補助上限額</th><th>大幅な賃上げをする場合</th></tr>
-        <tr><td>5人以下</td><td>750万円</td><td>1,000万円</td></tr>
-        <tr><td>6〜20人</td><td>1,500万円</td><td>2,000万円</td></tr>
-        <tr><td>21〜50人</td><td>3,000万円</td><td>4,000万円</td></tr>
-        <tr><td>51〜100人</td><td>5,000万円</td><td>6,500万円</td></tr>
-        <tr><td>101人以上</td><td>8,000万円</td><td>1億円</td></tr>
-      </table>
-      <p class="seo-note">※補助率：中小企業1/2（小規模企業者・再生事業者は2/3）。出典：中小企業省力化投資補助金（一般型）公式サイト（2026年8月時点）。</p>
-
-      <h3 class="seo-h3">こんな会社は対象になる可能性があります</h3>
-      <div class="hj-point">
-        <p class="a" style="line-height:2.3;">
-          ☑ 人手が足りず、受けられる仕事を断ったことがある<br />
-          ☑ 機械・設備の入替や増設を検討している<br />
-          ☑ 手作業の工程を自動化・効率化したい<br />
-          <br />
-          1つでも当てはまれば、まずは無料診断をおすすめします。<b>「うちの投資が対象になるか」を確認するだけなら、費用は一切かかりません。</b>
-        </p>
-      </div>
-
-      <h3 class="seo-h3">お金が戻ってくるまでの流れ</h3>
-      <ol class="hj-steps">
-        <li><b>無料診断・ご相談</b>　導入したい設備・現場の課題を伺い、使える補助金と見込み額をお伝えします</li>
-        <li><b>事業計画書の作成・申請</b>　採択のカギになる計画書を、当社が伴走して作り上げます</li>
-        <li><b>採択・設備の導入</b>　採択決定後に発注・導入。導入後の報告手続きもサポートします</li>
-        <li><b>補助金の入金</b>　報告が受理されると、補助金が振り込まれます</li>
-      </ol>
-      <p class="seo-note">※申請から入金まではおおむね1年前後かかります。設備の発注は原則「採択決定後」です（先に契約すると対象外になる場合があります）。</p>
-
-      <h3 class="seo-h3">よくあるご質問</h3>
-      <div class="hj-point">
-        <p class="q">Q. 相談にお金はかかりますか？</p>
-        <p class="a">ご相談・お見積りは<b>無料</b>です。報酬をいただくのは、支援内容にご納得いただきご契約いただいた場合のみです。</p>
-      </div>
-      <div class="hj-point">
-        <p class="q">Q. 何を導入するかまだ決まっていなくても相談できますか？</p>
-        <p class="a">できます。「人手不足をなんとかしたい」という段階からで大丈夫です。現場の課題から、補助金の対象になる投資をご一緒に考えます。</p>
-      </div>
-      <div class="hj-point">
-        <p class="q">Q. 落ちたらどうなりますか？</p>
-        <p class="a">審査に通らなかった場合、費用が無駄になることはありません。計画を磨き直して<b>次回の公募に再チャレンジ</b>できます（公募は年に複数回あります）。</p>
-      </div>
-
-      <div class="hj-cta">
-        <p class="m">まずは「対象になるか」だけ、確認してみませんか？</p>
-        <p class="s">LINEから「無料補助金診断」とお送りいただくか、お問い合わせフォームからご連絡ください。</p>
-        <a href="index.html#contact" class="btn btn-gold">無料診断・お問い合わせ</a>
-      </div>
-
-      <p class="seo-note" style="margin-top:28px;">※補助金の採択を保証するものではありません。制度の内容は年度・公募回により変更されます。記載の情報は2026年8月時点のものです。</p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="footer-brand-link" href="index.html">
-        <img src="assets/logo_white.png" alt="株式会社ベルテックジャパン" />
-        <span class="footer-brand-name"><span class="nb">株式会社</span><span class="nb">ベルテックジャパン</span></span>
-      </a>
-      <nav class="footer-nav">
-        <a href="index.html#services">サービス</a>
-        <a href="results.html">実績</a>
-        <a href="cases.html">採択事例</a>
-        <a href="index.html#contact">お問い合わせ</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <nav class="footer-legal">
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="tokushoho.html">特定商取引法に基づく表記</a>
-        </nav>
-        <p class="copyright">© 株式会社ベルテックジャパン All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="fbrand">株式会社ベルテックジャパン</div>
+  補助金活用サポート｜お問い合わせ: nagoya@belltecjapan.com
+</footer>
 
 </body>
 </html>
