@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>補助金ロードマップ｜相談から入金までのすごろく地図｜株式会社ベルテックジャパン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e1f44;
+    --navy-soft:#1b3160;
+    --gold:#c6a25a;
+    --gold-deep:#a9853f;
+    --gold-pale:#efe3cb;
+    --cream:#f6f4ef;
+    --white:#ffffff;
+    --ink:#2a2f3a;
+    --serif:"Noto Serif JP", "Hiragino Mincho ProN", serif;
+    --sans:"Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.8;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  .serif{font-family:var(--serif);}
+
+  /* ============ header ============ */
+  .site-header{
+    background:var(--navy);
+    color:var(--white);
+    padding:14px 20px;
+  }
+  .site-header .inner{
+    max-width:1080px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{
+    font-family:var(--serif);
+    font-weight:700;font-size:18px;letter-spacing:.06em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{
+    width:30px;height:30px;flex:0 0 auto;
+    border:1.5px solid var(--gold);border-radius:50%;
+    display:grid;place-items:center;
+    color:var(--gold);font-size:13px;font-weight:700;
+  }
+  .header-note{font-size:12px;color:#cfd6e6;letter-spacing:.05em;}
+  @media(max-width:600px){.header-note{display:none;}}
+
+  /* ============ hero ============ */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 420px at 50% -80px, #21396e 0%, var(--navy) 60%);
+    color:var(--white);
+    text-align:center;
+    padding:64px 20px 140px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{ /* 生成りの丘のような裾 */
+    content:"";position:absolute;left:-10%;right:-10%;bottom:-60px;height:120px;
+    background:var(--cream);border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    border:1px solid rgba(198,162,90,.7);
+    color:var(--gold);
+    font-size:12.5px;letter-spacing:.28em;
+    padding:6px 18px;border-radius:999px;
+    margin-bottom:22px;font-weight:500;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(28px,4.6vw,44px);
+    font-weight:700;letter-spacing:.06em;line-height:1.55;
+    margin-bottom:18px;
+  }
+  .hero h1 .gold{color:var(--gold);}
+  .hero .lead{
+    font-size:clamp(14px,1.8vw,16.5px);
+    color:#dbe1ee;max-width:620px;margin:0 auto;
+    letter-spacing:.04em;
+  }
+  .hero .compass{
+    margin:26px auto 0;width:64px;height:64px;opacity:.95;
+  }
+
+  /* ============ section common ============ */
+  .section{padding:72px 20px;}
+  .section .inner{max-width:1080px;margin:0 auto;}
+  .sec-head{text-align:center;margin-bottom:44px;}
+  .sec-head .kicker{
+    color:var(--gold-deep);font-size:12.5px;letter-spacing:.3em;font-weight:700;
+    margin-bottom:10px;
+  }
+  .sec-head h2{
+    font-family:var(--serif);
+    color:var(--navy);
+    font-size:clamp(23px,3.4vw,32px);
+    font-weight:700;letter-spacing:.06em;line-height:1.5;
+  }
+  .sec-head .sub{margin-top:12px;color:#5a6070;font-size:14.5px;}
+
+  /* ============ intro: あと払い ============ */
+  .intro{background:var(--cream);padding-top:0;}
+  .intro-card{
+    background:var(--white);
+    border:1px solid #e7e1d3;
+    border-radius:18px;
+    box-shadow:0 14px 40px rgba(14,31,68,.08);
+    padding:clamp(28px,4vw,48px);
+    max-width:860px;margin:0 auto;
+    position:relative;top:-40px;
+  }
+  .intro-card h2{
+    font-family:var(--serif);color:var(--navy);
+    font-size:clamp(20px,3vw,26px);font-weight:700;letter-spacing:.05em;
+    text-align:center;line-height:1.6;margin-bottom:10px;
+  }
+  .intro-card h2 .underline{
+    background:linear-gradient(transparent 68%, var(--gold-pale) 68%);
+    padding:0 2px;
+  }
+  .intro-card .desc{
+    text-align:center;color:#5a6070;font-size:14.5px;max-width:600px;margin:0 auto 30px;
+  }
+  .money-flow{
+    display:flex;align-items:stretch;justify-content:center;gap:0;
+    flex-wrap:wrap;
+  }
+  .money-box{
+    flex:1 1 200px;max-width:260px;
+    border-radius:14px;padding:20px 16px;text-align:center;
+  }
+  .money-box .label{font-size:12.5px;letter-spacing:.12em;font-weight:700;margin-bottom:6px;}
+  .money-box .amount{font-family:var(--serif);font-size:clamp(24px,3.4vw,30px);font-weight:700;line-height:1.3;}
+  .money-box .amount small{font-size:.55em;font-weight:600;}
+  .money-box .note{font-size:11.5px;margin-top:6px;opacity:.85;}
+  .money-box.pay{
+    background:var(--navy);color:var(--white);
+  }
+  .money-box.pay .label{color:#aab6d2;}
+  .money-box.back{
+    background:linear-gradient(160deg,#d8b877,var(--gold) 55%,var(--gold-deep));
+    color:var(--navy);
+  }
+  .money-box.back .label{color:#5d4b22;}
+  .money-arrow{
+    flex:0 0 auto;display:grid;place-items:center;padding:0 14px;
+  }
+  .money-arrow svg{width:56px;height:40px;}
+  .money-arrow .arrow-note{
+    font-size:11px;color:#7a7f8c;text-align:center;line-height:1.5;margin-top:4px;
+  }
+  @media(max-width:640px){
+    .money-flow{flex-direction:column;align-items:center;}
+    .money-box{width:100%;max-width:320px;}
+    .money-arrow svg{transform:rotate(90deg);width:40px;height:48px;}
+  }
+  .intro-point{
+    margin-top:28px;
+    background:var(--cream);
+    border-left:4px solid var(--gold);
+    border-radius:0 10px 10px 0;
+    padding:16px 20px;
+    font-size:14px;color:#454b59;
+  }
+  .intro-point strong{color:var(--navy);}
+
+  /* ============ roadmap（すごろく） ============ */
+  .roadmap{
+    background:
+      linear-gradient(180deg, var(--cream) 0%, #f1ede2 50%, var(--cream) 100%);
+    position:relative;
+  }
+  .map-frame{
+    position:relative;
+    max-width:1000px;margin:0 auto;
+    border:1px solid #e2dbc9;
+    border-radius:22px;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(198,162,90,.10), transparent 34%),
+      radial-gradient(circle at 88% 92%, rgba(14,31,68,.06), transparent 34%),
+      #fbfaf6;
+    box-shadow:0 20px 50px rgba(14,31,68,.07), inset 0 0 0 6px rgba(198,162,90,.08);
+    padding:8px;
+  }
+  .map-canvas{position:relative;}
+  .map-canvas > svg.road-svg{display:block;width:100%;height:auto;}
+
+  /* 道の上のマス（カード） */
+  .station{
+    position:absolute;
+    width:26%;
+    min-width:0;
+    transform:translateX(-50%);
+    background:var(--white);
+    border:1px solid #e7e1d3;
+    border-top:4px solid var(--gold);
+    border-radius:14px;
+    box-shadow:0 10px 26px rgba(14,31,68,.10);
+    padding:14px 15px 13px;
+    z-index:3;
+  }
+  .station .st-head{display:flex;align-items:center;gap:9px;margin-bottom:7px;}
+  .station .st-num{
+    flex:0 0 auto;width:30px;height:30px;border-radius:50%;
+    background:var(--navy);color:var(--gold);
+    font-family:var(--serif);font-weight:700;font-size:14px;
+    display:grid;place-items:center;letter-spacing:0;
+  }
+  .station.is-start .st-num,.station.is-goal .st-num{
+    background:var(--gold);color:var(--navy);font-size:9.5px;letter-spacing:.02em;
+  }
+  .station .st-icon{flex:0 0 auto;width:30px;height:30px;}
+  .station .st-icon svg{width:100%;height:100%;}
+  .station h3{
+    font-family:var(--serif);color:var(--navy);
+    font-size:15.5px;font-weight:700;line-height:1.45;letter-spacing:.02em;
+  }
+  .station p{font-size:12px;color:#5a6070;line-height:1.65;margin-top:2px;}
+  .station .st-term{
+    display:inline-block;margin-top:8px;
+    background:var(--gold-pale);color:#7a5f2a;
+    font-size:11px;font-weight:700;letter-spacing:.04em;
+    padding:2px 10px;border-radius:999px;
+  }
+  .station .st-caution{
+    margin-top:8px;background:#fdf3ee;border:1px solid #f0cdbd;border-radius:8px;
+    padding:7px 9px;font-size:11.5px;color:#9c4a2a;line-height:1.6;font-weight:500;
+  }
+  .station.is-goal{
+    border-top-color:var(--navy);
+    background:linear-gradient(170deg,#fffdf7, #fbf4e4);
+    box-shadow:0 14px 34px rgba(169,133,63,.28);
+  }
+
+  /* 道の上のノード（結節点の丸） */
+  .node{
+    position:absolute;z-index:2;
+    width:44px;height:44px;border-radius:50%;
+    transform:translate(-50%,-50%);
+    background:var(--white);
+    border:3px solid var(--gold);
+    box-shadow:0 4px 12px rgba(14,31,68,.22), inset 0 0 0 3px #fff;
+  }
+  .node::after{
+    content:"";position:absolute;inset:9px;border-radius:50%;
+    background:var(--navy);
+  }
+  .node.is-goal{border-color:var(--navy);}
+  .node.is-goal::after{background:var(--gold);}
+
+  /* --- 各マスの座標（SVG viewBox 1000×1620 に対応） --- */
+  .node.n1{left:20%;top:9.26%;}
+  .node.n2{left:62%;top:9.26%;}
+  .node.n3{left:62%;top:32.72%;}
+  .node.n4{left:20%;top:32.72%;}
+  .node.n5{left:20%;top:56.17%;}
+  .node.n6{left:62%;top:56.17%;}
+  .node.n7{left:47%;top:79.63%;}
+
+  .station.s1{left:20%;top:11.4%;}
+  .station.s2{left:62%;top:11.4%;}
+  .station.s3{left:62%;top:34.9%;}
+  .station.s4{left:20%;top:34.9%;}
+  .station.s5{left:20%;top:58.3%;}
+  .station.s6{left:62%;top:58.3%;}
+  .station.s7{left:47%;top:81.8%;width:30%;}
+
+  .map-legend{
+    max-width:1000px;margin:18px auto 0;
+    display:flex;justify-content:center;gap:22px;flex-wrap:wrap;
+    font-size:12px;color:#6a7080;
+  }
+  .map-legend .lg{display:flex;align-items:center;gap:7px;}
+  .map-legend .chip-road{width:26px;height:8px;border-radius:4px;background:var(--gold);position:relative;}
+  .map-legend .chip-road::after{content:"";position:absolute;left:4px;right:4px;top:3px;height:2px;background:#fff;border-radius:2px;}
+  .map-legend .chip-node{width:12px;height:12px;border-radius:50%;background:var(--white);border:2.5px solid var(--gold);}
+
+  /* ============ モバイル：縦一本の道 ============ */
+  .mobile-note{display:none;}
+  @media(max-width:860px){
+    .map-frame{border:none;background:none;box-shadow:none;padding:0;max-width:520px;}
+    .map-canvas > svg.road-svg{display:none;}
+    .node{display:none;}
+    .map-canvas{
+      position:relative;
+      padding:10px 0 10px 34px;
+    }
+    .map-canvas::before{ /* 縦の金の道 */
+      content:"";
+      position:absolute;left:12px;top:0;bottom:0;width:12px;border-radius:8px;
+      background:linear-gradient(180deg,#d8b877,var(--gold) 30%, var(--gold) 70%, var(--gold-deep));
+      box-shadow:inset 0 0 0 1px rgba(169,133,63,.5);
+    }
+    .map-canvas::after{ /* 中央の白い破線 */
+      content:"";
+      position:absolute;left:17px;top:12px;bottom:12px;width:2px;
+      background-image:linear-gradient(180deg,#fff 55%, transparent 55%);
+      background-size:2px 18px;
+      opacity:.85;
+    }
+    .station,
+    .station.s1,.station.s2,.station.s3,.station.s4,
+    .station.s5,.station.s6,.station.s7{
+      position:relative;transform:none;width:auto;min-width:0;
+      left:auto;top:auto;
+      margin:0 0 22px;
+    }
+    .station::before{ /* 道からカードへの枝 */
+      content:"";position:absolute;left:-22px;top:26px;width:22px;height:3px;
+      background:var(--gold);
+    }
+    .station h3{font-size:16px;}
+    .station p{font-size:12.5px;}
+  }
+
+  /* ============ 上限額 ============ */
+  .caps{background:var(--navy);color:var(--white);}
+  .caps .sec-head h2{color:var(--white);}
+  .caps .sec-head .kicker{color:var(--gold);}
+  .caps .sec-head .sub{color:#b9c2d8;}
+  .caps-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+  }
+  @media(max-width:960px){.caps-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:640px){.caps-grid{grid-template-columns:repeat(2,1fr);}}
+  .cap-card{
+    background:var(--navy-soft);
+    border:1px solid rgba(198,162,90,.35);
+    border-radius:14px;
+    padding:20px 14px 18px;text-align:center;
+  }
+  .cap-card .emp{
+    font-size:12px;color:#b9c2d8;letter-spacing:.08em;font-weight:500;margin-bottom:8px;
+  }
+  .cap-card .amt{
+    font-family:var(--serif);color:var(--gold);
+    font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.3;
+  }
+  .cap-card .amt small{font-size:.55em;}
+  .cap-card .upto{font-size:10.5px;color:#8f9ab5;margin-top:4px;letter-spacing:.06em;}
+  .caps-bonus{
+    margin-top:20px;
+    display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    background:linear-gradient(120deg, rgba(198,162,90,.16), rgba(198,162,90,.06));
+    border:1px dashed rgba(198,162,90,.6);
+    border-radius:14px;padding:18px 20px;text-align:center;
+  }
+  .caps-bonus .tag{
+    background:var(--gold);color:var(--navy);
+    font-size:12px;font-weight:900;letter-spacing:.08em;
+    padding:5px 14px;border-radius:999px;flex:0 0 auto;
+  }
+  .caps-bonus .txt{font-size:14.5px;color:#e8ebf3;}
+  .caps-bonus .txt strong{
+    font-family:var(--serif);color:var(--gold);font-size:1.35em;font-weight:700;
+  }
+  .caps-note{margin-top:14px;font-size:11.5px;color:#8f9ab5;text-align:center;line-height:1.7;}
+
+  /* ============ CTA ============ */
+  .cta{background:var(--cream);text-align:center;}
+  .cta-card{
+    max-width:760px;margin:0 auto;
+    background:var(--white);
+    border:1px solid #e7e1d3;border-radius:20px;
+    box-shadow:0 16px 44px rgba(14,31,68,.09);
+    padding:clamp(32px,5vw,52px) clamp(20px,5vw,48px);
+  }
+  .cta-card .start-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--navy);color:var(--gold);
+    font-family:var(--serif);font-weight:700;font-size:13px;letter-spacing:.22em;
+    padding:7px 20px;border-radius:999px;margin-bottom:18px;
+  }
+  .cta-card h2{
+    font-family:var(--serif);color:var(--navy);
+    font-size:clamp(21px,3.2vw,28px);font-weight:700;letter-spacing:.05em;line-height:1.6;
+    margin-bottom:12px;
+  }
+  .cta-card .desc{color:#5a6070;font-size:14.5px;max-width:520px;margin:0 auto 26px;}
+  .cta-btn{
+    display:inline-block;
+    background:linear-gradient(135deg,#d8b877,var(--gold) 55%,var(--gold-deep));
+    color:var(--navy);text-decoration:none;
+    font-weight:900;font-size:17px;letter-spacing:.08em;
+    padding:18px 54px;border-radius:999px;
+    box-shadow:0 10px 26px rgba(169,133,63,.4);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(169,133,63,.5);}
+  .cta-meta{
+    margin-top:16px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;
+    font-size:12.5px;color:#7a7f8c;
+  }
+  .cta-meta span{display:flex;align-items:center;gap:5px;}
+  .cta-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+  /* ============ footer / disclaimer ============ */
+  .disclaimer{
+    background:var(--cream);
+    padding:0 20px 56px;
+  }
+  .disclaimer .inner{
+    max-width:860px;margin:0 auto;
+    border-top:1px solid #e0dacb;padding-top:22px;
+    font-size:11.5px;color:#8a8f9c;line-height:1.9;
+  }
+  .disclaimer ul{list-style:none;}
+  .disclaimer li{padding-left:1.2em;position:relative;}
+  .disclaimer li::before{content:"※";position:absolute;left:0;}
+  .site-footer{
+    background:var(--navy);color:#aab6d2;text-align:center;
+    font-size:12px;padding:22px 20px;letter-spacing:.06em;
+  }
+  .site-footer .name{color:var(--white);font-family:var(--serif);font-size:13.5px;margin-bottom:4px;}
+</style>
+</head>
+<body>
+
+<!-- ================= header ================= -->
+<header class="site-header">
+  <div class="inner">
+    <div class="brand">
+      <span class="mark">B</span>
+      株式会社ベルテックジャパン
+    </div>
+    <div class="header-note">補助金活用サポート｜名古屋・愛知</div>
+  </div>
+</header>
+
+<!-- ================= hero ================= -->
+<section class="hero">
+  <span class="eyebrow">SUBSIDY ROADMAP 2026</span>
+  <h1 class="serif">相談から入金まで、<br>補助金の道のりを<span class="gold">一枚の地図</span>に。</h1>
+  <p class="lead">補助金は、手順を知っている人から順にたどり着けます。<br>ゴールまでの7つのマスを、まずは眺めてみてください。</p>
+  <svg class="compass" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+    <circle cx="32" cy="32" r="29" stroke="#c6a25a" stroke-width="2"/>
+    <circle cx="32" cy="32" r="23" stroke="#c6a25a" stroke-width="1" opacity=".4"/>
+    <path d="M32 12 L37 30 L32 27 L27 30 Z" fill="#c6a25a"/>
+    <path d="M32 52 L27 34 L32 37 L37 34 Z" fill="#ffffff" opacity=".7"/>
+    <circle cx="32" cy="32" r="2.5" fill="#c6a25a"/>
+  </svg>
+</section>
+
+<!-- ================= intro: あと払い ================= -->
+<section class="section intro">
+  <div class="inner">
+    <div class="intro-card">
+      <h2>補助金は<span class="underline">「あと払い」</span>。<br>だから、全体の地図が大事。</h2>
+      <p class="desc">補助金は先にもらえるお金ではなく、設備投資などを行ったあとに一部が戻ってくる制度です。だからこそ、入金までの道のりを最初に知っておくことが安心につながります。</p>
+
+      <div class="money-flow">
+        <div class="money-box pay">
+          <div class="label">まず自社で投資</div>
+          <div class="amount serif">2,000<small>万円</small></div>
+          <div class="note">例：設備・システム導入</div>
+        </div>
+        <div class="money-arrow">
+          <div>
+            <svg viewBox="0 0 56 40" fill="none" aria-hidden="true">
+              <path d="M2 20 H42" stroke="#c6a25a" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 7"/>
+              <path d="M40 8 L54 20 L40 32" stroke="#c6a25a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <div class="arrow-note">実績報告のあと</div>
+          </div>
+        </div>
+        <div class="money-box back">
+          <div class="label">あとから戻る</div>
+          <div class="amount serif">1,000<small>万円</small></div>
+          <div class="note">補助率1/2の場合の例</div>
+        </div>
+      </div>
+
+      <div class="intro-point">
+        <strong>ポイント：</strong>戻ってくるのは「正しい順番」で進めた場合のみ。順番を間違えると対象外になることがあります。次の地図で、その順番をご確認ください。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= roadmap ================= -->
+<section class="section roadmap" id="roadmap">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="kicker">ROADMAP</div>
+      <h2 class="serif">補助金すごろく<br>― 相談から入金までの7マス ―</h2>
+      <p class="sub">STARTからGOALまで、当社が並走します。</p>
+    </div>
+
+    <div class="map-frame">
+      <div class="map-canvas">
+
+        <!-- ===== 蛇行する道（デスクトップ） ===== -->
+        <svg class="road-svg" viewBox="0 0 1000 1620" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- 地図の飾り：等高線ふうの円 -->
+          <circle cx="120" cy="1280" r="90" stroke="#e6ddc8" stroke-width="1.5" opacity=".8"/>
+          <circle cx="120" cy="1280" r="62" stroke="#e6ddc8" stroke-width="1.5" opacity=".8"/>
+          <circle cx="895" cy="700" r="70" stroke="#e6ddc8" stroke-width="1.5" opacity=".8"/>
+          <circle cx="895" cy="700" r="44" stroke="#e6ddc8" stroke-width="1.5" opacity=".8"/>
+          <g opacity=".55" stroke="#d9d0b9" stroke-width="1.5" stroke-linecap="round">
+            <path d="M840 60 l10 0 M845 55 l0 10"/>
+            <path d="M90 700 l10 0 M95 695 l0 10"/>
+            <path d="M520 1560 l10 0 M525 1555 l0 10"/>
+          </g>
+
+          <!-- 道：外縁 -->
+          <path d="M 60 150 L 830 150 Q 960 150 960 340 Q 960 530 830 530 L 170 530 Q 40 530 40 720 Q 40 910 170 910 L 830 910 Q 960 910 960 1100 Q 960 1290 830 1290 L 470 1290"
+                stroke="#a9853f" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- 道：本体（金） -->
+          <path d="M 60 150 L 830 150 Q 960 150 960 340 Q 960 530 830 530 L 170 530 Q 40 530 40 720 Q 40 910 170 910 L 830 910 Q 960 910 960 1100 Q 960 1290 830 1290 L 470 1290"
+                stroke="#c6a25a" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- 道：中央の白破線 -->
+          <path d="M 60 150 L 830 150 Q 960 150 960 340 Q 960 530 830 530 L 170 530 Q 40 530 40 720 Q 40 910 170 910 L 830 910 Q 960 910 960 1100 Q 960 1290 830 1290 L 470 1290"
+                stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-dasharray="16 20" opacity=".85"/>
+
+          <!-- STARTピン -->
+          <g transform="translate(60,150)">
+            <circle r="26" fill="#0e1f44"/>
+            <circle r="26" stroke="#c6a25a" stroke-width="3" fill="none"/>
+            <text x="0" y="4.5" text-anchor="middle" fill="#c6a25a" font-size="11" font-weight="700" font-family="'Noto Sans JP',sans-serif" letter-spacing="1">START</text>
+          </g>
+
+          <!-- GOAL旗 -->
+          <g transform="translate(470,1290)">
+            <circle r="26" fill="#c6a25a"/>
+            <circle r="26" stroke="#0e1f44" stroke-width="3" fill="none"/>
+            <g transform="translate(-6,-40)">
+              <line x1="0" y1="0" x2="0" y2="34" stroke="#0e1f44" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M0 2 L24 8 L0 15 Z" fill="#0e1f44"/>
+            </g>
+            <text x="0" y="4.5" text-anchor="middle" fill="#0e1f44" font-size="11" font-weight="900" font-family="'Noto Sans JP',sans-serif" letter-spacing="1">GOAL</text>
+          </g>
+        </svg>
+
+        <!-- ===== 道のノード ===== -->
+        <div class="node n1" aria-hidden="true"></div>
+        <div class="node n2" aria-hidden="true"></div>
+        <div class="node n3" aria-hidden="true"></div>
+        <div class="node n4" aria-hidden="true"></div>
+        <div class="node n5" aria-hidden="true"></div>
+        <div class="node n6" aria-hidden="true"></div>
+
+        <!-- ===== マス 1 ===== -->
+        <div class="station s1 is-start">
+          <div class="st-head">
+            <span class="st-num">START</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><rect x="3" y="4" width="24" height="17" rx="4" stroke="#0e1f44" stroke-width="2"/><path d="M10 21 L8 27 L15 21" stroke="#0e1f44" stroke-width="2" stroke-linejoin="round"/><circle cx="10" cy="12.5" r="1.6" fill="#c6a25a"/><circle cx="15" cy="12.5" r="1.6" fill="#c6a25a"/><circle cx="20" cy="12.5" r="1.6" fill="#c6a25a"/></svg>
+            </span>
+            <h3>無料診断</h3>
+          </div>
+          <p>LINEで30秒。貴社が対象になり得るか、まず当たりをつけます。費用は0円です。</p>
+          <span class="st-term">所要30秒／費用0円</span>
+        </div>
+
+        <!-- ===== マス 2 ===== -->
+        <div class="station s2">
+          <div class="st-head">
+            <span class="st-num">2</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><rect x="5" y="3" width="20" height="24" rx="3" stroke="#0e1f44" stroke-width="2"/><path d="M10 9 H20 M10 14 H20 M10 19 H16" stroke="#c6a25a" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>ご相談・計画づくり</h3>
+          </div>
+          <p>ヒアリングをもとに、事業計画書を当社が伴走してつくり込みます。ここが採否の土台です。</p>
+          <span class="st-term">目安：約1〜2ヶ月</span>
+        </div>
+
+        <!-- ===== マス 3 ===== -->
+        <div class="station s3">
+          <div class="st-head">
+            <span class="st-num">3</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><path d="M4 15 L26 5 L20 26 L14 18 Z" stroke="#0e1f44" stroke-width="2" stroke-linejoin="round"/><path d="M14 18 L26 5" stroke="#c6a25a" stroke-width="2"/></svg>
+            </span>
+            <h3>申請</h3>
+          </div>
+          <p>第8回は受付2026年9月中旬〜締切10月中旬（予定）。電子申請に必要なGビズIDの取得に1〜2週間かかるため、事前準備が肝心です。</p>
+          <span class="st-term">GビズID取得：1〜2週間</span>
+        </div>
+
+        <!-- ===== マス 4 ===== -->
+        <div class="station s4">
+          <div class="st-head">
+            <span class="st-num">4</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><circle cx="13" cy="13" r="8" stroke="#0e1f44" stroke-width="2"/><path d="M19 19 L26 26" stroke="#0e1f44" stroke-width="2.5" stroke-linecap="round"/><path d="M9.5 13 L12 15.5 L17 10.5" stroke="#c6a25a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>審査・採択発表</h3>
+          </div>
+          <p>提出後は審査があります。当社支援の採択率は96%（一般型第1〜4回実績）。計画の質で結果は変わります。</p>
+          <span class="st-term">発表まで：数ヶ月程度</span>
+        </div>
+
+        <!-- ===== マス 5 ===== -->
+        <div class="station s5">
+          <div class="st-head">
+            <span class="st-num">5</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6" stroke="#0e1f44" stroke-width="2"/><circle cx="15" cy="15" r="2" fill="#c6a25a"/><path d="M15 4 V7 M15 23 V26 M4 15 H7 M23 15 H26 M7.2 7.2 L9.3 9.3 M20.7 20.7 L22.8 22.8 M22.8 7.2 L20.7 9.3 M9.3 20.7 L7.2 22.8" stroke="#0e1f44" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>設備の発注・導入</h3>
+          </div>
+          <p>採択・交付決定を受けてから、設備を発注し導入します。</p>
+          <div class="st-caution">⚠ 発注は必ず採択決定の後！ 先に契約・発注すると補助の対象外になります。</div>
+        </div>
+
+        <!-- ===== マス 6 ===== -->
+        <div class="station s6">
+          <div class="st-head">
+            <span class="st-num">6</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><rect x="6" y="5" width="18" height="22" rx="3" stroke="#0e1f44" stroke-width="2"/><rect x="11" y="2.5" width="8" height="5" rx="1.5" fill="#f6f4ef" stroke="#0e1f44" stroke-width="2"/><path d="M10.5 14 L13 16.5 L19 10.5" stroke="#c6a25a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 21 H19.5" stroke="#0e1f44" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <h3>実績報告</h3>
+          </div>
+          <p>導入内容・支払いの証憑をそろえて報告します。書類の抜け漏れも当社がチェックします。</p>
+          <span class="st-term">導入後すみやかに</span>
+        </div>
+
+        <!-- ===== マス 7（GOAL） ===== -->
+        <div class="station s7 is-goal">
+          <div class="st-head">
+            <span class="st-num">GOAL</span>
+            <span class="st-icon">
+              <svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="11" stroke="#a9853f" stroke-width="2"/><circle cx="15" cy="15" r="7.5" stroke="#a9853f" stroke-width="1" opacity=".5"/><text x="15" y="19.5" text-anchor="middle" font-size="12" font-weight="700" fill="#a9853f" font-family="'Noto Serif JP',serif">¥</text></svg>
+            </span>
+            <h3>補助金入金</h3>
+          </div>
+          <p>設備費用の1/2〜2/3が指定口座に振り込まれます。申請からここまで、おおむね1年前後が目安です。</p>
+          <span class="st-term">申請からおおむね1年前後</span>
+        </div>
+
+      </div><!-- /.map-canvas -->
+    </div><!-- /.map-frame -->
+
+    <div class="map-legend">
+      <div class="lg"><span class="chip-road"></span>補助金までの道</div>
+      <div class="lg"><span class="chip-node"></span>各ステップ（マス）</div>
+      <div class="lg">期間はいずれも目安です</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 上限額 ================= -->
+<section class="section caps">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="kicker">MAX AMOUNT</div>
+      <h2 class="serif">GOALで受け取れる上限額の目安</h2>
+      <p class="sub">従業員数の規模に応じて、補助上限額が変わります。</p>
+    </div>
+
+    <div class="caps-grid">
+      <div class="cap-card">
+        <div class="emp">従業員 5人以下</div>
+        <div class="amt serif">750<small>万円</small></div>
+        <div class="upto">まで</div>
+      </div>
+      <div class="cap-card">
+        <div class="emp">6〜20人</div>
+        <div class="amt serif">1,500<small>万円</small></div>
+        <div class="upto">まで</div>
+      </div>
+      <div class="cap-card">
+        <div class="emp">21〜50人</div>
+        <div class="amt serif">3,000<small>万円</small></div>
+        <div class="upto">まで</div>
+      </div>
+      <div class="cap-card">
+        <div class="emp">51〜100人</div>
+        <div class="amt serif">5,000<small>万円</small></div>
+        <div class="upto">まで</div>
+      </div>
+      <div class="cap-card">
+        <div class="emp">101人以上</div>
+        <div class="amt serif">8,000<small>万円</small></div>
+        <div class="upto">まで</div>
+      </div>
+    </div>
+
+    <div class="caps-bonus">
+      <span class="tag">賃上げ特例</span>
+      <span class="txt">大幅な賃上げに取り組む場合、上限が<strong>最大1億円</strong>まで引き上がる場合があります。</span>
+    </div>
+    <p class="caps-note">※ 上限額・補助率は申請枠・従業員数・要件により異なります。詳細は最新の公募要領をご確認ください。</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section cta">
+  <div class="inner">
+    <div class="cta-card">
+      <span class="start-badge">START</span>
+      <h2 class="serif">まずはSTARTの無料診断から。</h2>
+      <p class="desc">地図の1マス目は、LINEで30秒。貴社の状況で補助金を活用できそうか、費用0円でお答えします。しつこい営業は行いません。</p>
+      <a class="cta-btn" href="#">LINEで無料診断をはじめる</a>
+      <div class="cta-meta">
+        <span><span class="dot"></span>所要30秒</span>
+        <span><span class="dot"></span>費用0円</span>
+        <span><span class="dot"></span>名古屋・愛知の製造業に強い</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= disclaimer ================= -->
+<section class="disclaimer">
+  <div class="inner">
+    <ul>
+      <li>本ページの内容は2026年8月時点の公表情報に基づく概要です。制度・スケジュール・上限額は変更される場合があります。最新情報は公式の公募要領をご確認ください。</li>
+      <li>採択率96%は当社支援先における一般型第1〜4回の実績値であり、将来の採択を保証するものではありません。</li>
+      <li>補助金の交付は審査の結果によります。すべての申請が採択されるわけではありません。</li>
+      <li>期間・金額はいずれも目安であり、案件により異なります。</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="name">株式会社ベルテックジャパン</div>
+  <div>© 2026 Belltec Japan Co., Ltd.</div>
+</footer>
+
+</body>
+</html>

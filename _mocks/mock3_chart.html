@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かんたん診断｜うちの会社、補助金使える？｜株式会社ベルテックジャパン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e1f44;
+    --navy-2:#16305f;
+    --gold:#c6a25a;
+    --gold-soft:#e3cfa4;
+    --cream:#f6f4ef;
+    --white:#ffffff;
+    --ink:#1c2333;
+    --muted:#5c6474;
+    --line:#e5e0d4;
+    --serif:"Noto Serif JP", "Hiragino Mincho ProN", serif;
+    --sans:"Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+
+  /* ===== Header ===== */
+  .site-header{
+    background:var(--navy);
+    color:var(--white);
+    padding:14px 0;
+  }
+  .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .brand{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:1.02rem;
+    letter-spacing:.06em;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand::before{
+    content:"";
+    width:10px;height:10px;
+    background:var(--gold);
+    transform:rotate(45deg);
+    flex:0 0 auto;
+  }
+  .header-note{font-size:.72rem;color:var(--gold-soft);letter-spacing:.08em;white-space:nowrap;}
+  @media (max-width:479px){
+    .site-header .brand{font-size:.86rem;letter-spacing:.02em;white-space:nowrap;}
+    .header-note{display:none;}
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    background:
+      radial-gradient(ellipse 90% 70% at 85% -10%, rgba(198,162,90,.22), transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 70%, #1a3a72 100%);
+    color:var(--white);
+    text-align:center;
+    padding:64px 0 150px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;inset:auto 0 0 0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.6;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--gold);
+    color:var(--gold-soft);
+    font-size:.82rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    padding:7px 20px;
+    border-radius:999px;
+    margin-bottom:24px;
+  }
+  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:900;
+    font-size:clamp(1.7rem, 5.4vw, 2.9rem);
+    letter-spacing:.05em;
+    line-height:1.5;
+    margin-bottom:18px;
+  }
+  .hero h1 .accent{color:var(--gold-soft);}
+  .hero h1 .nowrap{display:inline-block;white-space:nowrap;}
+  .hero .sub{
+    font-family:var(--serif);
+    font-size:clamp(1rem, 3.2vw, 1.35rem);
+    font-weight:600;
+    letter-spacing:.08em;
+    color:rgba(255,255,255,.92);
+  }
+  .hero .sub strong{
+    color:var(--gold-soft);
+    font-weight:900;
+    font-size:1.25em;
+  }
+  .hero .lead{
+    margin-top:14px;
+    font-size:.88rem;
+    color:rgba(255,255,255,.72);
+    letter-spacing:.05em;
+  }
+
+  /* ===== Quiz card ===== */
+  .quiz-zone{margin-top:-96px;padding-bottom:24px;position:relative;z-index:2;}
+  .quiz-card{
+    background:var(--white);
+    border-radius:18px;
+    border:1px solid var(--line);
+    border-top:4px solid var(--gold);
+    box-shadow:0 24px 60px -24px rgba(14,31,68,.35);
+    max-width:640px;
+    margin:0 auto;
+    padding:36px 26px 40px;
+    overflow:hidden;
+  }
+  @media (min-width:640px){ .quiz-card{padding:44px 52px 48px;} }
+
+  .progress{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    margin-bottom:26px;
+  }
+  .progress .step{
+    width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:.85rem;
+    background:var(--cream);
+    color:var(--muted);
+    border:1.5px solid var(--line);
+    transition:all .35s ease;
+  }
+  .progress .bar{width:26px;height:2px;background:var(--line);transition:background .35s ease;}
+  .progress .step.active{
+    background:var(--navy);color:var(--white);border-color:var(--navy);
+    box-shadow:0 6px 14px -6px rgba(14,31,68,.5);
+  }
+  .progress .step.done{background:var(--gold);color:var(--white);border-color:var(--gold);}
+  .progress .bar.done{background:var(--gold);}
+
+  .pane{display:none;}
+  .pane.show{
+    display:block;
+    animation:fadeUp .45s ease both;
+  }
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .q-label{
+    text-align:center;
+    font-size:.78rem;font-weight:700;letter-spacing:.24em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .q-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(1.15rem, 4vw, 1.45rem);
+    text-align:center;
+    letter-spacing:.04em;
+    line-height:1.6;
+    color:var(--navy);
+    margin-bottom:26px;
+  }
+  .q-note{
+    text-align:center;font-size:.8rem;color:var(--muted);
+    margin:-16px 0 24px;
+  }
+
+  .btn-row{display:flex;flex-direction:column;gap:12px;}
+  @media (min-width:520px){ .btn-row.two{flex-direction:row;} .btn-row.two .q-btn{flex:1;} }
+
+  .q-btn{
+    display:block;width:100%;
+    font-family:var(--sans);
+    font-size:1.05rem;font-weight:700;letter-spacing:.06em;
+    padding:18px 16px;
+    border-radius:12px;
+    border:2px solid var(--navy);
+    background:var(--white);
+    color:var(--navy);
+    cursor:pointer;
+    transition:all .18s ease;
+    text-align:center;
+    min-height:60px;
+  }
+  .q-btn:hover{background:var(--navy);color:var(--white);transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(14,31,68,.5);}
+  .q-btn:active{transform:translateY(0);}
+  .q-btn.ghost{border-color:var(--line);color:var(--muted);font-weight:500;}
+  .q-btn.ghost:hover{background:var(--cream);color:var(--ink);box-shadow:none;}
+
+  .q-btn.size{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 20px;
+  }
+  .q-btn.size .cap{font-size:.78rem;font-weight:500;color:var(--gold);letter-spacing:.05em;}
+  .q-btn.size:hover .cap{color:var(--gold-soft);}
+
+  .back-link{
+    display:block;margin:20px auto 0;
+    background:none;border:none;cursor:pointer;
+    font-family:var(--sans);
+    font-size:.82rem;color:var(--muted);
+    text-decoration:underline;text-underline-offset:3px;
+  }
+  .back-link:hover{color:var(--navy);}
+
+  /* ===== Result ===== */
+  .result-head{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  .result-eyebrow{
+    display:inline-block;
+    background:var(--navy);color:var(--gold-soft);
+    font-size:.75rem;font-weight:700;letter-spacing:.2em;
+    padding:6px 18px;border-radius:999px;
+    margin-bottom:14px;
+  }
+  .result-title{
+    font-family:var(--serif);
+    font-weight:900;
+    font-size:clamp(1.3rem, 4.6vw, 1.7rem);
+    color:var(--navy);
+    letter-spacing:.04em;
+    line-height:1.55;
+  }
+  .amount-box{
+    background:linear-gradient(150deg, var(--navy), var(--navy-2));
+    border-radius:14px;
+    padding:26px 20px 24px;
+    text-align:center;
+    color:var(--white);
+    margin:22px 0 10px;
+    position:relative;
+    overflow:hidden;
+  }
+  .amount-box::before{
+    content:"";
+    position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .amount-box .cap{font-size:.85rem;letter-spacing:.12em;color:rgba(255,255,255,.85);}
+  .amount-box .amount{
+    font-family:var(--serif);
+    font-weight:900;
+    font-size:clamp(2.2rem, 9vw, 3.2rem);
+    color:var(--gold-soft);
+    line-height:1.3;
+    letter-spacing:.03em;
+  }
+  .amount-box .amount small{font-size:.45em;font-weight:700;margin-left:2px;}
+  .amount-box .plus{
+    margin-top:6px;
+    font-size:.82rem;color:rgba(255,255,255,.85);
+  }
+  .amount-box .plus strong{color:var(--gold-soft);}
+  .result-note{
+    font-size:.78rem;color:var(--muted);
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .cta-btn{
+    display:block;width:100%;
+    background:#06c755;
+    color:var(--white);
+    font-family:var(--sans);
+    font-size:1.12rem;font-weight:900;letter-spacing:.06em;
+    text-align:center;text-decoration:none;
+    padding:19px 16px;
+    border-radius:999px;
+    box-shadow:0 12px 26px -10px rgba(6,199,85,.55);
+    transition:all .18s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(6,199,85,.6);}
+  .cta-btn .icon{margin-right:8px;}
+  .cta-sub{
+    text-align:center;font-size:.8rem;color:var(--muted);margin-top:12px;
+  }
+  .cta-btn.navy{
+    background:var(--navy);
+    box-shadow:0 12px 26px -10px rgba(14,31,68,.55);
+  }
+  .result-soft p{
+    text-align:center;
+    font-size:.95rem;
+    color:var(--ink);
+    margin-bottom:22px;
+  }
+  .retry-link{
+    display:block;margin:18px auto 0;
+    background:none;border:none;cursor:pointer;
+    font-family:var(--sans);
+    font-size:.82rem;color:var(--muted);
+    text-decoration:underline;text-underline-offset:3px;
+  }
+  .retry-link:hover{color:var(--navy);}
+
+  /* ===== Sections ===== */
+  section.block{padding:64px 0;}
+  section.block.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .sec-eyebrow{
+    text-align:center;
+    font-size:.76rem;font-weight:700;letter-spacing:.28em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .sec-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(1.35rem, 4.4vw, 1.8rem);
+    text-align:center;
+    color:var(--navy);
+    letter-spacing:.06em;
+    margin-bottom:12px;
+  }
+  .sec-lead{
+    text-align:center;
+    font-size:.92rem;color:var(--muted);
+    max-width:560px;margin:0 auto 36px;
+  }
+
+  /* flowchart */
+  .flow-svg-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px;
+  }
+  .flow-svg-wrap svg{display:block;min-width:640px;width:100%;height:auto;margin:0 auto;}
+  .swipe-hint{display:none;font-size:.75rem;color:var(--muted);text-align:right;margin-bottom:6px;}
+  @media (max-width:700px){ .swipe-hint{display:block;} }
+
+  /* now open */
+  .open-card{
+    max-width:640px;margin:0 auto;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:5px solid var(--gold);
+    border-radius:14px;
+    padding:28px 24px;
+    box-shadow:0 14px 34px -20px rgba(14,31,68,.25);
+  }
+  .open-card .status{
+    display:inline-block;
+    background:#e8f4ec;color:#1d7a46;
+    font-size:.75rem;font-weight:900;letter-spacing:.1em;
+    padding:4px 14px;border-radius:999px;
+    margin-bottom:12px;
+  }
+  .open-card h3{
+    font-family:var(--serif);
+    font-size:1.3rem;font-weight:700;
+    color:var(--navy);
+    letter-spacing:.04em;
+    margin-bottom:14px;
+  }
+  .open-card dl{
+    display:grid;grid-template-columns:auto 1fr;gap:8px 18px;
+    font-size:.92rem;
+  }
+  .open-card dt{font-weight:700;color:var(--gold);white-space:nowrap;}
+  .open-card dd{color:var(--ink);}
+  .open-card .small{font-size:.78rem;color:var(--muted);margin-top:14px;}
+
+  /* steps */
+  .steps{
+    display:grid;gap:14px;
+    max-width:640px;margin:0 auto;
+    counter-reset:step;
+  }
+  @media (min-width:720px){ .steps{max-width:880px;grid-template-columns:repeat(4,1fr);} }
+  .step-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 20px;
+    position:relative;
+  }
+  .step-card .num{
+    font-family:var(--serif);
+    font-weight:900;
+    font-size:1.6rem;
+    color:var(--gold);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .step-card h4{
+    font-size:1rem;font-weight:700;color:var(--navy);
+    margin-bottom:6px;letter-spacing:.03em;
+  }
+  .step-card p{font-size:.83rem;color:var(--muted);line-height:1.7;}
+  .step-card p strong{color:#b0483a;font-weight:700;}
+  .steps-note{
+    max-width:640px;margin:18px auto 0;
+    font-size:.8rem;color:var(--muted);
+    text-align:center;
+  }
+  .steps-note strong{color:var(--navy);}
+
+  /* disclaimer */
+  .disclaimer{
+    max-width:640px;margin:0 auto;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px;
+    font-size:.78rem;color:var(--muted);
+    line-height:1.9;
+  }
+  .disclaimer h4{
+    font-size:.82rem;font-weight:700;color:var(--navy);
+    letter-spacing:.08em;
+    margin-bottom:8px;
+  }
+  .disclaimer ul{padding-left:1.2em;}
+  .disclaimer li{margin-bottom:2px;}
+
+  /* footer */
+  .site-footer{
+    background:var(--navy);
+    color:rgba(255,255,255,.7);
+    text-align:center;
+    padding:34px 0;
+    font-size:.78rem;
+    letter-spacing:.06em;
+  }
+  .site-footer .brand{justify-content:center;color:var(--white);margin-bottom:8px;font-size:.95rem;}
+
+  /* noscript fallback */
+  .noscript-box{
+    max-width:640px;margin:0 auto;
+    background:var(--white);
+    border:1px dashed var(--gold);
+    border-radius:14px;
+    padding:26px 24px;
+    font-size:.9rem;
+  }
+  .noscript-box p{margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">株式会社ベルテックジャパン</div>
+    <div class="header-note">補助金活用サポート</div>
+  </div>
+</header>
+
+<main>
+  <!-- ===== Hero ===== -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="badge"><span class="dot"></span>3問・30秒 かんたん診断<span class="dot"></span></div>
+      <h1><span class="nowrap">うちの会社、</span><span class="nowrap"><span class="accent">補助金</span>使える？</span></h1>
+      <p class="sub"><strong>3つの質問</strong>に答えるだけで、補助金が使えるかわかります</p>
+      <p class="lead">設備投資・省人化・システム導入をお考えの中小企業の方へ</p>
+    </div>
+  </div>
+
+  <!-- ===== Quiz ===== -->
+  <div class="quiz-zone">
+    <div class="wrap">
+      <div class="quiz-card" id="quiz">
+        <div class="progress" id="progress" aria-hidden="true">
+          <div class="step active" data-step="1">1</div>
+          <div class="bar" data-bar="1"></div>
+          <div class="step" data-step="2">2</div>
+          <div class="bar" data-bar="2"></div>
+          <div class="step" data-step="3">3</div>
+        </div>
+
+        <!-- Q1 -->
+        <div class="pane show" id="pane-q1">
+          <p class="q-label">QUESTION 1</p>
+          <h2 class="q-title">現場の人手不足を<br>感じていますか？</h2>
+          <div class="btn-row two">
+            <button class="q-btn" type="button" data-go="q2">はい、感じている</button>
+            <button class="q-btn ghost" type="button" data-go="q2" data-flag="no1">いいえ / どちらとも言えない</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="pane" id="pane-q2">
+          <p class="q-label">QUESTION 2</p>
+          <h2 class="q-title">機械・設備・システムの<br>導入予定や検討はありますか？</h2>
+          <div class="btn-row two">
+            <button class="q-btn" type="button" data-go="q3">はい、検討している</button>
+            <button class="q-btn ghost" type="button" data-go="q3" data-flag="no2">まだ具体的ではない</button>
+          </div>
+          <button class="back-link" type="button" data-back="q1">← 前の質問に戻る</button>
+        </div>
+
+        <!-- Q3 -->
+        <div class="pane" id="pane-q3">
+          <p class="q-label">QUESTION 3</p>
+          <h2 class="q-title">従業員数は<br>どのくらいですか？</h2>
+          <p class="q-note">※ パート・アルバイトの方を含むおおよその人数で構いません</p>
+          <div class="btn-row">
+            <button class="q-btn size" type="button" data-size="750">5人以下 <span class="cap">小規模</span></button>
+            <button class="q-btn size" type="button" data-size="1500">6〜20人 <span class="cap">小規模〜中規模</span></button>
+            <button class="q-btn size" type="button" data-size="3000">21〜50人 <span class="cap">中規模</span></button>
+            <button class="q-btn size" type="button" data-size="5000">51〜100人 <span class="cap">中規模〜中堅</span></button>
+            <button class="q-btn size" type="button" data-size="8000">101人以上 <span class="cap">中堅</span></button>
+          </div>
+          <button class="back-link" type="button" data-back="q2">← 前の質問に戻る</button>
+        </div>
+
+        <!-- Result: positive -->
+        <div class="pane" id="pane-result">
+          <div class="result-head">
+            <span class="result-eyebrow">診断結果</span>
+            <h2 class="result-title">対象になる<br>可能性があります！</h2>
+          </div>
+          <div class="amount-box">
+            <p class="cap">あなたの会社の補助上限額の目安</p>
+            <p class="amount"><span id="amount-num">1,500</span><small>万円</small></p>
+            <p class="plus">大幅な賃上げに取り組む場合は <strong>最大1億円</strong> まで拡大の例も</p>
+          </div>
+          <p class="result-note">※ 中小企業省力化投資補助金（一般型）の従業員規模別上限を参考にした目安です。<br>実際の上限額・対象可否は取組内容により異なります。</p>
+          <a class="cta-btn" href="#" onclick="return false;"><span class="icon">&#128172;</span>LINEで無料診断する</a>
+          <p class="cta-sub">貴社の状況に合わせて、使える補助金を無料でお調べします</p>
+          <button class="retry-link" type="button" data-retry>もう一度診断する</button>
+        </div>
+
+        <!-- Result: soft (no branch) -->
+        <div class="pane" id="pane-soft">
+          <div class="result-head">
+            <span class="result-eyebrow">診断結果</span>
+            <h2 class="result-title">まずはご相談ください</h2>
+          </div>
+          <div class="result-soft">
+            <p>現時点で具体的な導入予定がなくても、<br>課題の整理から始めることで<strong>使える補助金が見つかるケース</strong>は少なくありません。<br>状況をお聞かせいただければ、活用の可能性を一緒に整理します。</p>
+          </div>
+          <a class="cta-btn navy" href="#" onclick="return false;"><span class="icon">&#128172;</span>LINEで気軽に相談する</a>
+          <p class="cta-sub">「何から考えればいいか」の段階から、無料でお手伝いします</p>
+          <button class="retry-link" type="button" data-retry>もう一度診断する</button>
+        </div>
+
+        <noscript>
+          <div class="noscript-box">
+            <p><strong>【かんたん診断の内容】</strong>（この診断はJavaScriptが有効な環境で動作します。以下は診断の全体像です）</p>
+            <p>Q1. 現場の人手不足を感じていますか？<br>Q2. 機械・設備・システムの導入予定や検討はありますか？<br>Q3. 従業員数はどのくらいですか？</p>
+            <p>Q1・Q2が「はい」の場合、補助金の対象になる可能性があります。補助上限額の目安（中小企業省力化投資補助金・一般型を参考）は、従業員5人以下：750万円／6〜20人：1,500万円／21〜50人：3,000万円／51〜100人：5,000万円／101人以上：8,000万円。大幅な賃上げに取り組む場合は最大1億円まで拡大の例もあります。詳しくは下のフローチャートをご覧いただくか、お気軽にご相談ください。</p>
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Flowchart ===== -->
+  <section class="block">
+    <div class="wrap">
+      <p class="sec-eyebrow">FLOW CHART</p>
+      <h2 class="sec-title">診断の全体像</h2>
+      <p class="sec-lead">上の3つの質問は、この流れで判定しています。Yes / No をたどってみてください。</p>
+      <p class="swipe-hint">※ 図は横にスクロールできます →</p>
+      <div class="flow-svg-wrap">
+        <svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="補助金かんたん診断のYes/Noフローチャート">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0e1f44"/>
+            </marker>
+            <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#c6a25a"/>
+            </marker>
+          </defs>
+          <style>
+            .box{fill:#ffffff;stroke:#0e1f44;stroke-width:2;rx:12;}
+            .boxSoft{fill:#f6f4ef;stroke:#c6a25a;stroke-width:2;}
+            .boxGoal{fill:#0e1f44;stroke:#c6a25a;stroke-width:2;}
+            .t{font-family:"Noto Sans JP",sans-serif;font-size:16px;font-weight:700;fill:#0e1f44;text-anchor:middle;}
+            .tSmall{font-family:"Noto Sans JP",sans-serif;font-size:12px;fill:#5c6474;text-anchor:middle;}
+            .tGoal{font-family:"Noto Serif JP",serif;font-size:17px;font-weight:700;fill:#e3cfa4;text-anchor:middle;}
+            .tGoalSub{font-family:"Noto Sans JP",sans-serif;font-size:12px;fill:#ffffff;text-anchor:middle;}
+            .edge{stroke:#0e1f44;stroke-width:2;fill:none;}
+            .edgeNo{stroke:#c6a25a;stroke-width:2;fill:none;stroke-dasharray:6 5;}
+            .lbl{font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:900;text-anchor:middle;}
+            .yes{fill:#0e1f44;}
+            .no{fill:#a3823f;}
+          </style>
+
+          <!-- Start -->
+          <rect class="box" x="255" y="16" width="250" height="52" rx="26"/>
+          <text class="t" x="380" y="48">診断スタート</text>
+
+          <!-- Q1 -->
+          <line class="edge" x1="380" y1="68" x2="380" y2="98" marker-end="url(#arrow)"/>
+          <rect class="box" x="230" y="102" width="300" height="64" rx="12"/>
+          <text class="t" x="380" y="130">Q1. 人手不足を感じている？</text>
+          <text class="tSmall" x="380" y="152">現場の負担・採用難・残業増など</text>
+
+          <!-- Q1 Yes -->
+          <line class="edge" x1="380" y1="166" x2="380" y2="200" marker-end="url(#arrow)"/>
+          <text class="lbl yes" x="398" y="188">YES</text>
+
+          <!-- Q1 No -->
+          <path class="edgeNo" d="M530,134 H648 V440" marker-end="url(#arrowGold)"/>
+          <text class="lbl no" x="575" y="126">NO</text>
+
+          <!-- Q2 -->
+          <rect class="box" x="215" y="204" width="330" height="64" rx="12"/>
+          <text class="t" x="380" y="232">Q2. 設備・システム導入の検討は？</text>
+          <text class="tSmall" x="380" y="254">機械・ロボット・ITツールなど</text>
+
+          <!-- Q2 Yes -->
+          <line class="edge" x1="380" y1="268" x2="380" y2="302" marker-end="url(#arrow)"/>
+          <text class="lbl yes" x="398" y="290">YES</text>
+
+          <!-- Q2 No -->
+          <path class="edgeNo" d="M545,236 H648 V440" marker-end="url(#arrowGold)"/>
+          <text class="lbl no" x="580" y="228">NO</text>
+
+          <!-- Q3 -->
+          <rect class="box" x="240" y="306" width="280" height="64" rx="12"/>
+          <text class="t" x="380" y="334">Q3. 従業員数は？</text>
+          <text class="tSmall" x="380" y="356">5人以下 〜 101人以上の5区分</text>
+
+          <!-- Q3 -> result -->
+          <line class="edge" x1="380" y1="370" x2="380" y2="404" marker-end="url(#arrow)"/>
+
+          <!-- Result box -->
+          <rect class="boxGoal" x="120" y="408" width="420" height="120" rx="14"/>
+          <text class="tGoal" x="330" y="446">対象になる可能性あり</text>
+          <text class="tGoalSub" x="330" y="474">補助上限の目安：750万〜8,000万円（従業員数による）</text>
+          <text class="tGoalSub" x="330" y="496">大幅賃上げなら最大1億円の例も ※取組内容により異なる</text>
+          <text class="tGoalSub" x="330" y="516">→ LINEで無料診断へ</text>
+
+          <!-- Soft result -->
+          <rect class="boxSoft" x="570" y="444" width="160" height="84" rx="14"/>
+          <text class="t" x="650" y="478">まずはご相談を</text>
+          <text class="tSmall" x="650" y="500">課題整理から</text>
+          <text class="tSmall" x="650" y="516">無料でお手伝い</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Now open ===== -->
+  <section class="block alt">
+    <div class="wrap">
+      <p class="sec-eyebrow">NOW OPEN</p>
+      <h2 class="sec-title">いま募集中の補助金</h2>
+      <p class="sec-lead">直近で申請を検討できる公募はこちらです。</p>
+      <div class="open-card">
+        <span class="status">募集予定</span>
+        <h3>中小企業省力化投資補助金（一般型）第8回</h3>
+        <dl>
+          <dt>受付開始</dt><dd>2026年9月中旬（予定）</dd>
+          <dt>申請締切</dt><dd>2026年10月中旬（予定）</dd>
+          <dt>対象の例</dt><dd>省力化のための機械装置・ロボット・システム導入 など</dd>
+        </dl>
+        <p class="small">※ スケジュール・要件は変更される場合があります。最新情報は公式の公募要領をご確認ください。準備には通常1〜2か月かかるため、早めのご相談をおすすめします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Steps ===== -->
+  <section class="block">
+    <div class="wrap">
+      <p class="sec-eyebrow">4 STEPS</p>
+      <h2 class="sec-title">ご相談から採択までの流れ</h2>
+      <p class="sec-lead">はじめてでも大丈夫。段取りはすべて伴走します。</p>
+      <div class="steps">
+        <div class="step-card">
+          <div class="num">01</div>
+          <h4>無料相談・ヒアリング</h4>
+          <p>LINEまたはお電話で現状をお聞きし、使える可能性のある補助金を整理します。</p>
+        </div>
+        <div class="step-card">
+          <div class="num">02</div>
+          <h4>対象判定・制度選び</h4>
+          <p>要件・スケジュール・投資計画を照らし合わせ、最適な制度をご提案します。</p>
+        </div>
+        <div class="step-card">
+          <div class="num">03</div>
+          <h4>事業計画づくり・申請</h4>
+          <p>審査で評価されるポイントを押さえた事業計画の作成をサポートします。</p>
+        </div>
+        <div class="step-card">
+          <div class="num">04</div>
+          <h4>採択後に発注・導入</h4>
+          <p>採択結果を待って設備を発注・導入します。<strong>発注は必ず採択後</strong>が原則です（先に発注すると対象外になる場合があります）。</p>
+        </div>
+      </div>
+      <p class="steps-note">採択までの期間は制度により異なります。<strong>「発注のタイミング」</strong>は補助金活用でいちばん多いつまずきポイントです。お気軽にご確認ください。</p>
+    </div>
+  </section>
+
+  <!-- ===== Disclaimer ===== -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <div class="disclaimer">
+        <h4>ご確認ください（免責事項）</h4>
+        <ul>
+          <li>本診断は簡易的な目安であり、補助金の採択を保証するものではありません。</li>
+          <li>掲載内容は2026年8月時点の公表情報に基づきます。制度・スケジュール・金額は変更される場合があります。</li>
+          <li>補助上限額は制度・類型・取組内容によって異なります。正式な対象判定には個別のご確認が必要です。</li>
+          <li>申請には各制度の公募要領に定める要件をすべて満たす必要があります。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="brand">株式会社ベルテックジャパン</div>
+    <p>補助金を活用した設備投資・省人化・DX推進のご相談はお気軽に</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var panes = {
+    q1: document.getElementById('pane-q1'),
+    q2: document.getElementById('pane-q2'),
+    q3: document.getElementById('pane-q3'),
+    result: document.getElementById('pane-result'),
+    soft: document.getElementById('pane-soft')
+  };
+  var flags = { no1:false, no2:false };
+  var amountEl = document.getElementById('amount-num');
+
+  function show(key){
+    Object.keys(panes).forEach(function(k){
+      panes[k].classList.remove('show');
+    });
+    // force reflow so the animation replays
+    void panes[key].offsetWidth;
+    panes[key].classList.add('show');
+    updateProgress(key);
+  }
+
+  function updateProgress(key){
+    var stepNum = key==='q1'?1 : key==='q2'?2 : key==='q3'?3 : 4;
+    document.querySelectorAll('.progress .step').forEach(function(el){
+      var n = parseInt(el.getAttribute('data-step'),10);
+      el.classList.toggle('active', n===stepNum);
+      el.classList.toggle('done', n<stepNum);
+    });
+    document.querySelectorAll('.progress .bar').forEach(function(el){
+      var n = parseInt(el.getAttribute('data-bar'),10);
+      el.classList.toggle('done', n<stepNum);
+    });
+  }
+
+  // forward buttons (Q1/Q2)
+  document.querySelectorAll('[data-go]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var flag = btn.getAttribute('data-flag');
+      if(flag) flags[flag] = true;
+      else if(btn.closest('#pane-q1')) flags.no1 = false;
+      else if(btn.closest('#pane-q2')) flags.no2 = false;
+      show(btn.getAttribute('data-go'));
+    });
+  });
+
+  // Q3 size buttons -> result
+  document.querySelectorAll('[data-size]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(flags.no1 || flags.no2){
+        show('soft');
+        return;
+      }
+      var v = parseInt(btn.getAttribute('data-size'),10);
+      amountEl.textContent = v.toLocaleString('ja-JP');
+      show('result');
+    });
+  });
+
+  // back links
+  document.querySelectorAll('[data-back]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      show(btn.getAttribute('data-back'));
+    });
+  });
+
+  // retry
+  document.querySelectorAll('[data-retry]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      flags.no1 = false; flags.no2 = false;
+      show('q1');
+      document.getElementById('quiz').scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

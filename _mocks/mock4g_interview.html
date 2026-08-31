@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社長と診断士の補助金トーク｜株式会社ベルテックジャパン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f6f1;
+    --paper-deep:#f1ede4;
+    --navy:#0e1f44;
+    --gold:#c6a25a;
+    --gold-pale:#e9dfc9;
+    --ink:#26241f;
+    --sumi:#3a3833;
+    --muted:#8a857a;
+    --rule:#d9d3c4;
+    --rule-strong:#b9b2a0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:2.05;
+    font-size:15.5px;
+    font-weight:400;
+  }
+  .sans{font-family:"Noto Sans JP",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;}
+  img{max-width:100%;}
+
+  /* ===== Masthead ===== */
+  .masthead{
+    max-width:960px;
+    margin:0 auto;
+    padding:26px 24px 18px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    border-bottom:1px solid var(--rule-strong);
+  }
+  .masthead .brand{
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.22em;
+    color:var(--ink);
+  }
+  .masthead .issue{
+    font-size:10.5px;
+    letter-spacing:.24em;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  @media(max-width:480px){ .masthead .issue{display:none;} }
+
+  /* ===== Hero (特集扉) ===== */
+  .hero{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .hero-photo{
+    margin-top:34px;
+    position:relative;
+  }
+  .hero-photo img{
+    display:block;
+    width:100%;
+    height:auto;
+    filter:saturate(.96);
+  }
+  .hero-photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    box-shadow:inset 0 0 0 1px rgba(38,36,31,.14);
+    pointer-events:none;
+  }
+  .hero-photo figcaption{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:10.5px;
+    letter-spacing:.14em;
+    color:var(--muted);
+    text-align:right;
+    margin-top:8px;
+  }
+  .tobira{
+    max-width:720px;
+    margin:0 auto;
+    padding:44px 0 10px;
+    text-align:center;
+  }
+  .tobira .kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:14px;
+    font-size:13px;
+    letter-spacing:.34em;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:26px;
+  }
+  .tobira .kicker::before,
+  .tobira .kicker::after{
+    content:"";
+    display:block;
+    width:36px;
+    height:1px;
+    background:var(--gold);
+  }
+  .tobira h1{
+    font-weight:900;
+    font-size:clamp(22px,5.6vw,40px);
+    line-height:1.72;
+    letter-spacing:.06em;
+    color:var(--ink);
+    margin-bottom:22px;
+  }
+  .tobira h1 em{
+    font-style:normal;
+    color:var(--navy);
+    border-bottom:2px solid var(--gold);
+    padding-bottom:2px;
+  }
+  .tobira .lead{
+    font-size:14.5px;
+    line-height:2.2;
+    color:var(--sumi);
+    max-width:34em;
+    margin:0 auto;
+  }
+
+  /* 対談者プロフィール */
+  .profiles{
+    max-width:720px;
+    margin:38px auto 0;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .profile{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:20px 12px;
+  }
+  .profile + .profile{border-left:1px solid var(--rule);}
+  .profile .txt{text-align:left;}
+  .profile .role{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:10px;
+    letter-spacing:.26em;
+    font-weight:700;
+    margin-bottom:2px;
+  }
+  .profile.boss .role{color:var(--sumi);}
+  .profile.expert .role{color:var(--gold);}
+  .profile .who{
+    font-size:14px;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .profile .who small{
+    display:block;
+    font-size:11px;
+    font-weight:400;
+    color:var(--muted);
+    letter-spacing:.04em;
+  }
+
+  /* 丸トリミングの顔写真 */
+  .face{
+    flex:none;
+    width:56px;height:56px;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+    background:#fff;
+    box-shadow:0 0 0 1px var(--rule-strong), 0 2px 8px rgba(38,36,31,.10);
+  }
+  .face img{
+    position:absolute;
+    width:360%;
+    height:auto;
+    max-width:none;
+  }
+  .face.boss img{left:-54%;top:-26%;}
+  .face.expert img{left:-224%;top:-24%;}
+  .face.sm{width:34px;height:34px;box-shadow:0 0 0 1px var(--rule-strong);}
+
+  /* ===== 本文（対談） ===== */
+  .article{
+    max-width:720px;
+    margin:0 auto;
+    padding:56px 24px 30px;
+  }
+  .scene{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--muted);
+    letter-spacing:.14em;
+    margin-bottom:46px;
+  }
+  .scene::before{content:"――";margin-right:.6em;color:var(--rule-strong);}
+  .scene::after{content:"――";margin-left:.6em;color:var(--rule-strong);}
+
+  .utterance{
+    display:flex;
+    gap:16px;
+    padding:26px 0;
+  }
+  .utterance + .utterance{border-top:1px solid var(--rule);}
+  .speaker{
+    flex:none;
+    width:76px;
+    text-align:center;
+  }
+  .speaker .face{margin:0 auto 8px;}
+  .speaker .tag{
+    font-family:"Noto Sans JP",sans-serif;
+    display:inline-block;
+    font-size:10px;
+    letter-spacing:.28em;
+    text-indent:.28em;
+    font-weight:700;
+    padding:3px 0;
+    width:100%;
+    border-top:1px solid currentColor;
+    border-bottom:1px solid currentColor;
+  }
+  .utterance.boss .tag{color:var(--sumi);}
+  .utterance.expert .tag{color:var(--gold);}
+  .utterance p{
+    flex:1;
+    font-size:15.5px;
+    line-height:2.15;
+    letter-spacing:.02em;
+    padding-top:4px;
+  }
+  .utterance p strong{
+    font-weight:700;
+    color:var(--navy);
+    background:linear-gradient(transparent 68%, var(--gold-pale) 68%);
+  }
+  .utterance p small{
+    display:block;
+    margin-top:10px;
+    font-size:11.5px;
+    line-height:1.8;
+    color:var(--muted);
+    font-weight:400;
+  }
+
+  /* プルクオート */
+  .pull{
+    margin:54px auto;
+    max-width:34em;
+    text-align:center;
+    position:relative;
+    padding:34px 16px 30px;
+  }
+  .pull::before{
+    content:"“";
+    position:absolute;
+    top:-14px;left:50%;
+    transform:translateX(-50%);
+    font-size:76px;
+    line-height:1;
+    color:var(--gold);
+    font-family:"Noto Serif JP",serif;
+    font-weight:900;
+  }
+  .pull blockquote{
+    font-size:clamp(20px,4.6vw,27px);
+    font-weight:700;
+    line-height:1.85;
+    letter-spacing:.06em;
+    color:var(--navy);
+  }
+  .pull .by{
+    font-family:"Noto Sans JP",sans-serif;
+    margin-top:14px;
+    font-size:10.5px;
+    letter-spacing:.26em;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .pull::after{
+    content:"";
+    display:block;
+    width:44px;height:1px;
+    background:var(--gold);
+    margin:20px auto 0;
+  }
+
+  /* ===== 図版 ===== */
+  .figure{
+    margin:44px 0;
+    border-top:2px solid var(--ink);
+    border-bottom:1px solid var(--rule-strong);
+    padding:22px 4px 20px;
+    background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,0));
+  }
+  .fig-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .fig-no{
+    font-family:"Noto Sans JP",sans-serif;
+    flex:none;
+    font-size:11px;
+    letter-spacing:.22em;
+    font-weight:700;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:2px 10px;
+  }
+  .fig-head h3{
+    font-size:16.5px;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:.05em;
+    line-height:1.6;
+  }
+  .fig-note{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:14px;
+    line-height:1.8;
+  }
+
+  /* fig.1 上限表 */
+  .limit-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .limit-table th,.limit-table td{
+    padding:11px 8px;
+    text-align:left;
+    border-bottom:1px solid var(--rule);
+  }
+  .limit-table th{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;
+    letter-spacing:.16em;
+    color:var(--muted);
+    font-weight:500;
+    border-bottom:1px solid var(--ink);
+  }
+  .limit-table td.amount{
+    text-align:right;
+    font-weight:700;
+    color:var(--navy);
+    font-size:17px;
+    white-space:nowrap;
+    font-feature-settings:"tnum";
+  }
+  .limit-table td.amount .yen{font-size:11.5px;font-weight:400;color:var(--muted);margin-left:3px;}
+  .limit-table tr.hl td{background:rgba(198,162,90,.10);}
+  .limit-plus{
+    margin-top:16px;
+    border:1px solid var(--rule-strong);
+    border-left:3px solid var(--gold);
+    padding:12px 16px;
+    font-size:13.5px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    line-height:1.8;
+    background:rgba(255,255,255,.6);
+  }
+  .limit-plus b{color:var(--navy);font-size:16px;}
+  .limit-plus .tag{
+    font-family:"Noto Sans JP",sans-serif;
+    flex:none;
+    font-size:10px;
+    letter-spacing:.14em;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:2px 10px;
+  }
+
+  /* fig.2 補助率 */
+  .rate-flow{
+    display:flex;
+    align-items:stretch;
+    gap:12px;
+  }
+  .rate-box{
+    flex:1;
+    padding:18px 10px 16px;
+    text-align:center;
+    border:1px solid var(--rule-strong);
+    background:rgba(255,255,255,.6);
+  }
+  .rate-box .cap{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;letter-spacing:.1em;margin-bottom:4px;color:var(--muted);
+  }
+  .rate-box .val{
+    font-weight:700;
+    font-size:clamp(19px,4.6vw,26px);
+    line-height:1.3;
+    color:var(--ink);
+    font-feature-settings:"tnum";
+  }
+  .rate-box .sub{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:10.5px;margin-top:5px;color:var(--muted);
+  }
+  .rate-box.back{
+    border:1px solid var(--navy);
+    background:var(--navy);
+  }
+  .rate-box.back .val{color:var(--gold);}
+  .rate-box.back .cap,.rate-box.back .sub{color:#c9d2e6;}
+  .rate-arrow{
+    flex:none;
+    display:flex;
+    align-items:center;
+    color:var(--gold);
+  }
+  .rate-bar{margin-top:20px;}
+  .rate-bar .track{
+    display:flex;
+    height:36px;
+    overflow:hidden;
+    border:1px solid var(--rule-strong);
+  }
+  .rate-bar .seg{
+    font-family:"Noto Sans JP",sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.04em;
+  }
+  .rate-bar .seg.self{flex:1;background:var(--paper-deep);color:#6b665a;border-right:1px solid var(--rule-strong);}
+  .rate-bar .seg.subsidy{flex:1;background:var(--gold);color:var(--navy);}
+  .rate-bar .cap{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;color:var(--muted);margin-top:8px;text-align:center;line-height:1.8;
+  }
+
+  /* fig.3 タイムライン */
+  .timeline{
+    list-style:none;
+    position:relative;
+    padding-left:24px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:6px;top:8px;bottom:8px;
+    width:1px;
+    background:var(--rule-strong);
+  }
+  .timeline li{
+    position:relative;
+    padding:0 0 22px 0;
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:"";
+    position:absolute;
+    left:-23px;top:9px;
+    width:11px;height:11px;
+    border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--gold);
+  }
+  .timeline li.now::before{background:var(--gold);}
+  .timeline .when{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    color:var(--gold);
+    font-weight:700;
+  }
+  .timeline .what{
+    font-size:15px;
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.6;
+  }
+  .timeline .detail{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:12.5px;
+    color:var(--muted);
+    line-height:1.8;
+  }
+  .timeline .badge{
+    font-family:"Noto Sans JP",sans-serif;
+    display:inline-block;
+    font-size:10px;
+    background:var(--navy);
+    color:var(--gold);
+    padding:1px 10px;
+    margin-left:8px;
+    letter-spacing:.1em;
+    vertical-align:2px;
+  }
+  .caution-strip{
+    margin-top:18px;
+    border:1px solid var(--gold);
+    padding:13px 16px;
+    font-size:13.5px;
+    line-height:1.9;
+    color:var(--ink);
+    background:rgba(198,162,90,.08);
+  }
+  .caution-strip b{color:var(--navy);}
+
+  /* ===== CTA ===== */
+  .cta{
+    max-width:720px;
+    margin:60px auto 0;
+    padding:0 24px;
+  }
+  .cta-inner{
+    border-top:2px solid var(--ink);
+    text-align:center;
+    padding:44px 16px 50px;
+  }
+  .cta-inner .cta-kicker{
+    font-family:"Noto Sans JP",sans-serif;
+    font-size:11px;
+    letter-spacing:.3em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:16px;
+  }
+  .cta-inner h3{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:.08em;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .cta-inner p{
+    font-size:14px;
+    line-height:2.1;
+    color:var(--sumi);
+    margin-bottom:28px;
+  }
+  .cta-inner p b{color:var(--navy);border-bottom:1px solid var(--gold);}
+  .cta-btn{
+    font-family:"Noto Sans JP",sans-serif;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    background:var(--navy);
+    color:#fff;
+    font-weight:700;
+    font-size:15.5px;
+    letter-spacing:.06em;
+    padding:17px 38px;
+    text-decoration:none;
+    box-shadow:0 10px 26px rgba(14,31,68,.22);
+    transition:transform .15s ease, box-shadow .15s ease;
+    max-width:100%;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(14,31,68,.28);}
+  .cta-sub{
+    font-family:"Noto Sans JP",sans-serif;
+    margin-top:16px;
+    font-size:11.5px;
+    color:var(--muted);
+    letter-spacing:.06em;
+  }
+
+  /* ===== 免責・フッター ===== */
+  .disclaimer{
+    font-family:"Noto Sans JP",sans-serif;
+    max-width:720px;
+    margin:30px auto 0;
+    padding:26px 24px 44px;
+    font-size:11px;
+    color:var(--muted);
+    line-height:1.9;
+    border-top:1px solid var(--rule);
+  }
+  .disclaimer h4{
+    font-size:11px;
+    font-weight:700;
+    color:#7d786c;
+    letter-spacing:.2em;
+    margin-bottom:8px;
+  }
+  .disclaimer ul{padding-left:1.3em;}
+  .site-footer{
+    background:var(--navy);
+    color:#c9d2e6;
+    text-align:center;
+    font-size:11.5px;
+    padding:26px 16px;
+    letter-spacing:.06em;
+    font-family:"Noto Sans JP",sans-serif;
+  }
+  .site-footer .fbrand{
+    font-family:"Noto Serif JP",serif;
+    color:#fff;
+    font-size:13.5px;
+    letter-spacing:.16em;
+    margin-bottom:6px;
+  }
+
+  .sp-only{display:none;}
+  @media(max-width:480px){ .sp-only{display:inline;} }
+  @media(max-width:520px){
+    .utterance{gap:12px;padding:22px 0;}
+    .speaker{width:60px;}
+    .speaker .face{width:44px;height:44px;}
+    .speaker .tag{font-size:9px;letter-spacing:.2em;text-indent:.2em;}
+    .utterance p{font-size:14.5px;line-height:2.05;}
+    .profiles{flex-direction:column;}
+    .profile + .profile{border-left:none;border-top:1px solid var(--rule);}
+    .limit-table th,.limit-table td{padding:10px 5px;font-size:13px;}
+    .limit-table td.amount{font-size:15.5px;}
+    .rate-flow{flex-direction:column;gap:8px;}
+    .rate-arrow{justify-content:center;transform:rotate(90deg);}
+    .figure{padding:20px 0 18px;}
+    .tobira .kicker{font-size:11px;letter-spacing:.2em;}
+    .tobira .kicker::before,.tobira .kicker::after{width:22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== マストヘッド ===== -->
+<header class="masthead">
+  <div class="brand">株式会社ベルテックジャパン</div>
+  <div class="issue">補助金活用サポート｜対談企画</div>
+</header>
+
+<!-- ===== 特集扉 ===== -->
+<section class="hero">
+  <div class="tobira">
+    <span class="kicker">特集｜補助金は、中小企業にこそ。</span>
+    <h1>「補助金って、<br>ウチには関係ないでしょ？」<br><em>——実は、そこからの話です。</em></h1>
+    <p class="lead">よくある社長の疑問に、中小企業診断士がトーク形式でお答えします。読むのにかかるのは約3分です。</p>
+  </div>
+
+  <figure class="hero-photo">
+    <img src="assets/chars_interview.png" alt="町工場の社長と中小企業診断士の対談ポートレート" width="1536" height="1024">
+    <figcaption>写真左：町工場の社長／右：中小企業診断士（イメージ）</figcaption>
+  </figure>
+
+  <div class="profiles">
+    <div class="profile boss">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <div class="txt">
+        <div class="role">社 長</div>
+        <div class="who">町工場の社長<small>従業員5名・金属加工</small></div>
+      </div>
+    </div>
+    <div class="profile expert">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <div class="txt">
+        <div class="role">診断士</div>
+        <div class="who">中小企業診断士<small>ベルテックジャパン</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 対談本文 ===== -->
+<main class="article">
+
+  <p class="scene">とある平日の昼、工場の事務所にて</p>
+
+  <!-- 1 -->
+  <div class="utterance boss">
+    <div class="speaker">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">社 長</span>
+    </div>
+    <p>補助金って、どうせウチみたいな<strong>小さい会社は無理</strong>でしょ？</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="utterance expert">
+    <div class="speaker">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">診断士</span>
+    </div>
+    <p>いえいえ、むしろ小さい会社のための制度なんです。実は<strong>従業員5人以下でも最大750万円</strong>の補助が受けられます。</p>
+  </div>
+
+  <!-- プルクオート1 -->
+  <aside class="pull">
+    <blockquote>従業員5人以下でも、<br>最大750万円。</blockquote>
+    <div class="by">中小企業診断士</div>
+  </aside>
+
+  <!-- fig.1 上限表 -->
+  <section class="figure">
+    <div class="fig-head">
+      <span class="fig-no">fig.1</span>
+      <h3>従業員数別・補助上限額のめやす</h3>
+    </div>
+    <table class="limit-table">
+      <thead>
+        <tr><th>従業員数</th><th style="text-align:right;">補助上限額</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hl"><td>5人以下</td><td class="amount">750<span class="yen">万円</span></td></tr>
+        <tr><td>6〜20人</td><td class="amount">1,500<span class="yen">万円</span></td></tr>
+        <tr><td>21〜50人</td><td class="amount">3,000<span class="yen">万円</span></td></tr>
+        <tr><td>51〜100人</td><td class="amount">5,000<span class="yen">万円</span></td></tr>
+        <tr><td>101人以上</td><td class="amount">8,000<span class="yen">万円</span></td></tr>
+      </tbody>
+    </table>
+    <div class="limit-plus">
+      <span class="tag">賃上げ特例</span>
+      <span>大幅な賃上げに取り組む場合、上限は<b>最大1億円</b>まで引き上げの対象になります。</span>
+    </div>
+    <p class="fig-note">※ 中小企業省力化投資補助金（一般型）の例。制度・回次により金額や要件は変わります。</p>
+  </section>
+
+  <!-- 3 -->
+  <div class="utterance boss">
+    <div class="speaker">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">社 長</span>
+    </div>
+    <p>タダでもらえるの？　<strong>怪しくない？</strong></p>
+  </div>
+
+  <!-- 4 -->
+  <div class="utterance expert">
+    <div class="speaker">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">診断士</span>
+    </div>
+    <p>お気持ちは分かります（笑）。でも<strong>国の正式な制度</strong>です。設備費用の<strong>1/2〜2/3</strong>が補助されます。ただし誰でももらえるわけではなく、<strong>審査があります</strong>。</p>
+  </div>
+
+  <!-- fig.2 補助率 -->
+  <section class="figure">
+    <div class="fig-head">
+      <span class="fig-no">fig.2</span>
+      <h3>2,000万円の機械なら、こう戻ってくる</h3>
+    </div>
+    <div class="rate-flow">
+      <div class="rate-box pay">
+        <div class="cap">設備投資額</div>
+        <div class="val">2,000<span style="font-size:.55em;">万円</span></div>
+        <div class="sub">いったん全額支払い</div>
+      </div>
+      <div class="rate-arrow">
+        <svg width="30" height="24" viewBox="0 0 30 24" fill="none" aria-hidden="true"><path d="M2 12 h20 M16 5 l7 7 -7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="rate-box back">
+        <div class="cap">補助金（1/2の場合）</div>
+        <div class="val">1,000<span style="font-size:.55em;">万円</span></div>
+        <div class="sub">後から戻ってくる</div>
+      </div>
+    </div>
+    <div class="rate-bar">
+      <div class="track">
+        <div class="seg self">自己負担 1,000万円</div>
+        <div class="seg subsidy">補助 1,000万円</div>
+      </div>
+      <p class="cap">実質負担は半分に。補助率2/3が適用される場合、負担はさらに小さくなります。</p>
+    </div>
+    <p class="fig-note">※ 補助率・上限は制度や企業規模により異なります。補助金は原則「後払い（精算払い）」です。</p>
+  </section>
+
+  <!-- 5 -->
+  <div class="utterance boss">
+    <div class="speaker">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">社 長</span>
+    </div>
+    <p>でもさ、<strong>手続き面倒</strong>なんでしょ。書類とか苦手なんだよ。</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="utterance expert">
+    <div class="speaker">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">診断士</span>
+    </div>
+    <p>そこは私たちの出番です。<strong>計画書づくりは私たちが伴走</strong>します。当社支援の採択率は<strong>96%</strong>です。<small>※ 中小企業省力化投資補助金（一般型）第1〜4回の当社支援実績。将来の採択をお約束するものではありません。</small></p>
+  </div>
+
+  <!-- 7 -->
+  <div class="utterance boss">
+    <div class="speaker">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">社 長</span>
+    </div>
+    <p>ふーん…。で、<strong>いつまでに何すればいい</strong>の？</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="utterance expert">
+    <div class="speaker">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">診断士</span>
+    </div>
+    <p>いま<strong>第8回が募集中</strong>です。受付は<strong>2026年9月中旬</strong>、締切は<strong>10月中旬（予定）</strong>。ひとつだけ注意点——<strong>機械の発注は採択決定の後</strong>です。先に買ってしまうと対象外になります。</p>
+  </div>
+
+  <!-- プルクオート2 -->
+  <aside class="pull">
+    <blockquote>機械の発注は、<br>採択決定の後。</blockquote>
+    <div class="by">中小企業診断士</div>
+  </aside>
+
+  <!-- fig.3 タイムライン -->
+  <section class="figure">
+    <div class="fig-head">
+      <span class="fig-no">fig.3</span>
+      <h3>申請から入金までの流れ（第8回のめやす）</h3>
+    </div>
+    <ol class="timeline">
+      <li class="now">
+        <div class="when">いま（2026年8月）</div>
+        <div class="what">無料相談・計画づくりスタート<span class="badge">現在地</span></div>
+        <div class="detail">現状のヒアリングと、対象になりそうな設備の整理から始めます。</div>
+      </li>
+      <li>
+        <div class="when">2026年9月中旬</div>
+        <div class="what">第8回 申請受付開始</div>
+        <div class="detail">電子申請（GビズID）で提出。書類準備は受付前に済ませておきます。</div>
+      </li>
+      <li>
+        <div class="when">2026年10月中旬（予定）</div>
+        <div class="what">申請締切</div>
+        <div class="detail">締切直前は駆け込みが集中します。余裕を持った準備が安心です。</div>
+      </li>
+      <li>
+        <div class="when">採択発表後</div>
+        <div class="what">交付決定 → 機械を発注</div>
+        <div class="detail">発注・契約は必ずこのタイミング以降。導入・支払い・実績報告へ進みます。</div>
+      </li>
+      <li>
+        <div class="when">実績報告の確認後</div>
+        <div class="what">補助金の入金</div>
+        <div class="detail">かかった経費を精算するかたちで、補助金が振り込まれます。</div>
+      </li>
+    </ol>
+    <div class="caution-strip"><b>ここだけは要注意：</b>採択決定前に発注・契約した設備は補助対象外です。「見積までOK・発注はNG」と覚えてください。</div>
+    <p class="fig-note">※ スケジュールは2026年8月時点の公表情報にもとづく予定です。変更される場合があります。</p>
+  </section>
+
+  <!-- 9 -->
+  <div class="utterance boss">
+    <div class="speaker">
+      <div class="face boss"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">社 長</span>
+    </div>
+    <p>なるほどね。じゃあ、<strong>まず何から</strong>やればいい？</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="utterance expert">
+    <div class="speaker">
+      <div class="face expert"><img src="assets/chars_interview.png" alt=""></div>
+      <span class="tag">診断士</span>
+    </div>
+    <p>かんたんです。LINEで<strong>「無料補助金診断」</strong>と送ってください。<strong>30秒</strong>で終わります。御社が対象になりそうか、まず無料でお調べします。</p>
+  </div>
+
+</main>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="cta-inner">
+    <div class="cta-kicker">FREE CHECK</div>
+    <h3>無料補助金診断はこちら</h3>
+    <p>LINEで<b>「無料補助金診断」</b>と送るだけ。<br>従業員数と業種がわかれば、対象になりそうな制度をお調べします。</p>
+    <a class="cta-btn" href="#">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.9 3 3 6.4 3 10.4c0 3.6 3.1 6.6 7.3 7.3.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3c1.3-1.4 2-2.9 2-4.6C21 6.4 17.1 3 12 3Z" fill="#ffffff"/></svg>
+      LINEで「無料補助金診断」と送る
+    </a>
+    <div class="cta-sub">相談は無料です。しつこい営業は行いません。</div>
+  </div>
+</section>
+
+<!-- ===== 免責 ===== -->
+<section class="disclaimer">
+  <h4>ご留意事項</h4>
+  <ul>
+    <li>本ページの内容は2026年8月時点の公表情報にもとづくものです。制度の内容・スケジュールは変更される場合があります。最新情報は各制度の公式サイト・公募要領をご確認ください。</li>
+    <li>補助金には審査があり、申請すれば必ず採択されるものではありません。当社は採択を保証するものではありません。</li>
+    <li>掲載の採択率（96%）は、中小企業省力化投資補助金（一般型）第1〜4回における当社支援案件の実績であり、将来の結果を示すものではありません。</li>
+    <li>登場人物の会話は制度理解のための構成です。実際の要件・手続きは個社の状況により異なります。</li>
+  </ul>
+</section>
+
+<footer class="site-footer">
+  <div class="fbrand">株式会社ベルテックジャパン</div>
+  補助金活用サポート｜お問い合わせ: nagoya@belltecjapan.com
+</footer>
+
+</body>
+</html>
