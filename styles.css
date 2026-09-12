@@ -649,7 +649,7 @@ a { color: inherit; text-decoration: none; }
 
   /* Hero text — enters AFTER ribbon draw */
   .hero-copy .hero-eyebrow,
-  .hero-copy h1,
+  .hero-copy h1:not(.blur-ready),
   .hero-copy .hero-sub,
   .hero-copy .btn {
     opacity: 0;
@@ -663,6 +663,21 @@ a { color: inherit; text-decoration: none; }
 
   @keyframes heroIn {
     to { opacity: 1; transform: none; }
+  }
+
+  /* Blur reveal (21st.dev BlurReveal 移植): 見出しを文字ごとにぼかし→鮮明 */
+  .hero-copy h1.blur-ready { opacity: 1; transform: none; animation: none; }
+  .blur-char {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(10px);
+    animation: blurIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: calc(1.5s + var(--i) * 0.07s);
+    will-change: opacity, filter, transform;
+  }
+  @keyframes blurIn {
+    to { opacity: 1; filter: blur(0); transform: none; }
   }
 
   /* Background image fades in with the ribbon draw */
@@ -1164,3 +1179,5 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 560px) {
   .footer-brand-name { font-size: 16px; letter-spacing: 0.04em; }
 }
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}

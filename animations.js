@@ -4,6 +4,36 @@
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // --- Hero headline: blur reveal per character (port of 21st.dev BlurReveal) ---
+  (function () {
+    var h1 = document.querySelector(".hero-copy h1.hero-mission");
+    if (!h1 || reduce) return;
+    var full = h1.textContent;
+    var i = 0;
+    var frag = document.createDocumentFragment();
+    var sr = document.createElement("span");
+    sr.className = "sr-only";
+    sr.textContent = full;
+    frag.appendChild(sr);
+    Array.prototype.slice.call(h1.childNodes).forEach(function (node) {
+      if (node.nodeType === 3) {
+        Array.prototype.forEach.call(node.textContent, function (ch) {
+          var s = document.createElement("span");
+          s.className = "blur-char";
+          s.setAttribute("aria-hidden", "true");
+          s.style.setProperty("--i", String(i++));
+          s.textContent = ch;
+          frag.appendChild(s);
+        });
+      } else {
+        frag.appendChild(node.cloneNode(true));
+      }
+    });
+    h1.innerHTML = "";
+    h1.appendChild(frag);
+    h1.classList.add("blur-ready");
+  })();
+
   // --- Mark elements for scroll reveal ---
   document.querySelectorAll(
     ".eyebrow, .section-title, .stat, " +
