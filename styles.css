@@ -1192,3 +1192,67 @@ a { color: inherit; text-decoration: none; }
 }
 
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* ===== Message（代表挨拶） ===== */
+.message { position: relative; overflow: hidden; background: var(--bg-soft); }
+.message-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: center;
+}
+.message-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(246,244,239,0.94) 0%, rgba(246,244,239,0.82) 55%, rgba(246,244,239,0.66) 100%);
+}
+.message-inner {
+  position: relative; z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 64px;
+  align-items: center;
+}
+.message .eyebrow { text-align: left; }
+.message-title.section-title {
+  text-align: left;
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.message-title::after {
+  content: ""; display: block; width: 48px; height: 2px;
+  margin-top: 22px;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+}
+.message-body p {
+  font-size: 15px; line-height: 2.05; color: var(--ink);
+  margin: 0 0 18px;
+}
+.message-sign {
+  margin-top: 30px;
+  font-family: var(--serif);
+  font-size: 16px; letter-spacing: 0.06em; color: var(--navy-deep);
+}
+.message-photo {
+  margin: 0; align-self: center;
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(10,23,51,0.18);
+  border: 1px solid rgba(198,162,90,0.35);
+}
+.message-photo img { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) {
+  .message-inner { grid-template-columns: 1fr; gap: 36px; }
+  .message-photo { order: -1; max-width: 420px; margin: 0 auto; }
+  .message-overlay { background: rgba(246,244,239,0.88); }
+}
+
+/* ヘッダー：中間幅で折り返さない */
+.brand-name, .gnav a, .header-cta { white-space: nowrap; }
+@media (max-width: 1200px) {
+  .gnav { gap: 20px; margin-right: 20px; }
+  .gnav a { font-size: 15px; }
+  .brand-name { font-size: 21px; letter-spacing: 0.05em; }
+}
+@media (max-width: 1060px) {
+  .brand-name { font-size: 18px; letter-spacing: 0.03em; }
+  .gnav { gap: 16px; margin-right: 16px; }
+  .gnav a { font-size: 14px; }
+}
